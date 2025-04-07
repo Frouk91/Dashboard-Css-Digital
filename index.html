@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Css Digital</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+            z-index: 1;
+        }
+        
+        header h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .contact-list {
+            list-style-type: none;
+        }
+        
+        .contact-list li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .contact-number {
+            font-weight: 600;
+            color: var(--accent);
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-number:hover {
+            background-color: rgba(231, 76, 60, 0.2);
+        }
+        
+        .links-list {
+            list-style-type: none;
+        }
+        
+        .links-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .links-list a {
+            display: block;
+            padding: 1rem;
+            background-color: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+            padding-right: 2.5rem;
+        }
+        
+        .links-list a::after {
+            content: "→";
+            position: absolute;
+            right: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .links-list a:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .links-list a:hover::after {
+            transform: translateX(5px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 1rem;
+            }
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+            margin-top: 1.5rem;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+            box-shadow: 0 6px 8px rgba(231, 76, 60, 0.4);
+        }
+        
+        .agents-list {
+            list-style-type: none;
+        }
+        
+        .agents-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .agents-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .agent-email {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .agent-name {
+            font-weight: 600;
+            color: var(--dark);
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .agent-name:hover {
+            background-color: rgba(52, 152, 219, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Css Digital</h1>
+            <p>Ressources et contacts utiles</p>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2>Numéros Utiles</h2>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-name">Valipost</span>
+                        <span class="contact-number">03 28 76 70 00</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Esker</span>
+                        <span class="contact-number">04 26 99 07 60</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Digit Prio</span>
+                        <span class="contact-number">01 56 38 36 80</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Accueil Neotouch</span>
+                        <span class="contact-number">01 41 06 74 00</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Neotouch Presta</span>
+                        <span class="contact-number">01 73 09 40 93</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Syndic</span>
+                        <span class="contact-number">01 55 69 62 73</span>
+                    </li>
+                    <li>
+                        <span class="contact-name">Distribute</span>
+                        <span class="contact-number">01 55 69 65 00</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>Ressources Importantes</h2>
+                <ul class="links-list">
+                    <li>
+                        <a href="https://frouk91.github.io/Neotouch/" target="_blank">Template Escalade</a>
+                    </li>
+                    <li>
+                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FNouvelle%20Codification%20Digitale%200624%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Codification des requêtes</a>
+                    </li>
+                    <li>
+                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FScript%20d%27appels%20%200624%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Script d'appels</a>
+                    </li>
+                    <li>
+                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements%2FTache%20pour%20Software%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements" target="_blank">Tache pour Software</a>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            <div class="card">
+                <h2>Liste des Agents Expert</h2>
+                <ul class="agents-list">
+                    <li>
+                        <span class="agent-email">Quadient agentexpert01</span>
+                        <span class="agent-name">Omer</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert02</span>
+                        <span class="agent-name">Philippe</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert03</span>
+                        <span class="agent-name">Adel</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert04</span>
+                        <span class="agent-name">Julien</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert05</span>
+                        <span class="agent-name">Gaël</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert06</span>
+                        <span class="agent-name">Toufik</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert07</span>
+                        <span class="agent-name">Kevin</span>
+                    </li>
+                    <li>
+                        <span class="agent-email">Quadient agentexpert08</span>
+                        <span class="agent-name">Camil</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Neotouch | Dashboard des ressources</p>
+        </footer>
+    </div>
+</body>
+</html>

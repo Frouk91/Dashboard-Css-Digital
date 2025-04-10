@@ -1,16 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Css Digital</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Css Digital</title>
+<style>
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
             --light: #ecf0f1;
             --dark: #2c3e50;
+            --tertiary: #27ae60;
         }
         
         * {
@@ -29,6 +31,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative; /* Ajouté */
         }
         
         header {
@@ -39,7 +42,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* Modifié de "hidden" à "visible" */
         }
         
         header::before {
@@ -51,6 +54,7 @@
             height: 100%;
             background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
             z-index: 1;
+            pointer-events: none; /* Ajouté pour permettre les clics à travers */
         }
         
         header h1 {
@@ -76,6 +80,8 @@
             background-color: white;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ajouté */
+            z-index: 1; /* Ajouté */
         }
         
         .card {
@@ -257,111 +263,389 @@
         .agent-name:hover {
             background-color: rgba(52, 152, 219, 0.2);
         }
+        
+        /* Style pour le lien du planning - version discrète */
+        .planning-link {
+            display: inline-block;
+            color: white;
+            background-color: var(--secondary);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            position: relative; /* Ajouté */
+            z-index: 10; /* Ajouté */
+        }
+        
+        .planning-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* Style pour le lien du ticket - MODIFIÉ */
+        .ticket-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+            z-index: 99999;
+        }
+        
+        .ticket-btn {
+            display: inline-block;
+            color: white;
+            background-color: var(--accent);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 99999;
+        }
+        
+        .ticket-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .ticket-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 99999;
+            left: 0;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .ticket-content a {
+            color: var(--dark);
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 99999;
+        }
+        
+        .ticket-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .ticket-content a:hover {
+            background-color: #f5f5f5;
+            color: var(--accent);
+            padding-left: 1.2rem;
+        }
+        
+        .ticket-dropdown:hover .ticket-content {
+            display: block;
+        }
+        
+        /* Style pour le lien ADP */
+        .adp-link {
+            display: inline-block;
+            color: white;
+            background-color: #8e44ad; /* Violet pour distinguer des autres liens */
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .adp-link:hover {
+            background-color: #7d3c98;
+            transform: translateY(-2px);
+        }
+        
+        /* Style pour l'inspecteur de variable - Complètement revisé */
+        .inspector-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+            z-index: 99999; /* Très haute valeur pour être sûr */
+        }
+        
+        .inspector-btn {
+            display: inline-block;
+            color: white;
+            background-color: var(--tertiary);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative; /* Ajouté */
+            z-index: 99999; /* Ajouté */
+        }
+        
+        .inspector-btn:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+        
+        .inspector-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 99999; /* Très haute valeur */
+            left: 0;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .inspector-content a {
+            color: var(--dark);
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #eee;
+            position: relative; /* Ajouté */
+            z-index: 99999; /* Ajouté */
+        }
+        
+        .inspector-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .inspector-content a:hover {
+            background-color: #f5f5f5;
+            color: var(--tertiary);
+            padding-left: 1.2rem;
+        }
+        
+        /* Solution alternative avec JavaScript */
+        .inspector-dropdown:hover .inspector-content {
+            display: block;
+        }
+        
+        .header-tools {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 9999; /* Très haute valeur */
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Dashboard Css Digital</h1>
-            <p>Ressources et contacts utiles</p>
-        </header>
+<div class="container">
+<header>
+<h1>Dashboard Css Digital</h1>
+<p>Ressources et contacts utiles</p>
+<div class="header-tools">
+<a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true" class="planning-link" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+<line x1="16" y1="2" x2="16" y2="6"></line>
+<line x1="8" y1="2" x2="8" y2="6"></line>
+<line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>Planning CS 2025</a>
+
+<a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage" class="adp-link" target="_blank">
+<!-- Nouvelle icône de pointage remplaçant l'icône "+" -->
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>ADP</a>
+
+<!-- MENU TICKET MODIFIÉ -->
+<div class="ticket-dropdown">
+<div class="ticket-btn">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>Ouvrir un ticket</div>
+<div class="ticket-content">
+<a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F" target="_blank">Esker</a>
+<a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1" target="_blank">Primobox</a>
+</div>
+</div>
+
+<div class="inspector-dropdown">
+<div class="inspector-btn">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<polyline points="16 18 22 12 16 6"></polyline>
+<polyline points="8 6 2 12 8 18"></polyline>
+</svg>Inspecteur de variable</div>
+<div class="inspector-content">
+<a href="http://dev.meereen.nsweb.neodom.org/DemoWSNeotouch/inspecter.php" target="_blank">Tour D</a>
+<a href="http://dev.meereen.nsweb.neodom.org/DemoWSNeotouchG/inspecter.php" target="_blank">Tour G</a>
+</div>
+</div>
+</div>
+</header>
+<div class="content">
+<div class="card">
+<h2>Numéros Utiles</h2>
+<ul class="contact-list">
+<li>
+<span class="contact-name">Accueil Quadient</span>
+<span class="contact-number">0 892 892 111</span>
+</li>
+<li>
+<span class="contact-name">Neotouch & Neobox</span>
+<span class="contact-number">01 41 06 74 00</span>
+</li>
+<li>
+<span class="contact-name">Neotouch Prio</span>
+<span class="contact-number">01 56 38 36 80</span>
+</li>
+<li>
+<span class="contact-name">Neotouch Syndic</span>
+<span class="contact-number">01 55 69 62 73</span>
+</li>
+<li>
+<span class="contact-name">Neotouch Presta</span>
+<span class="contact-number">01 73 09 40 93</span>
+</li>
+<li>
+<span class="contact-name">Esker</span>
+<span class="contact-number">04 26 99 07 60</span>
+</li>
+<li>
+<span class="contact-name">Impress Distribute</span>
+<span class="contact-number">01 55 69 65 00</span>
+</li>
+<li>
+<span class="contact-name">Impress Automate</span>
+<span class="contact-number">03 28 76 70 00</span>
+</li>
+</ul>
+</div>
+<div class="card">
+<h2>Ressources Importantes</h2>
+<ul class="links-list">
+<li>
+<a href="https://frouk91.github.io/Neotouch/" target="_blank">Template Escalade</a>
+</li>
+<li>
+<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FNouvelle%20Codification%20Digitale%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Codification des requêtes</a>
+</li>
+<li>
+<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FScript%20d%27appels%20%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Script d'appels</a>
+</li>
+<li>
+<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements%2FTache%20pour%20Software%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements" target="_blank">Tache pour Software</a>
+</li>
+<li><a href="https://www.trustesker.com" target="_blank">État des tours Esker</a></li></ul>
+</div>
+<div class="card">
+<h2>Liste des Agents Expert</h2>
+<ul class="agents-list">
+<li>
+<span class="agent-email">Quadient agentexpert01</span>
+<span class="agent-name">Omer</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert02</span>
+<span class="agent-name">Philippe</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert03</span>
+<span class="agent-name">Adel</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert04</span>
+<span class="agent-name">Julien</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert05</span>
+<span class="agent-name">Gaël</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert06</span>
+<span class="agent-name">Toufik</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert07</span>
+<span class="agent-name">Kevin</span>
+</li>
+<li>
+<span class="agent-email">Quadient agentexpert08</span>
+<span class="agent-name">Camil</span>
+</li>
+</ul>
+</div>
+</div>
+<footer>
+<p>© 2025 ICA Support Services | Dashboard des ressources</p>
+</footer>
+</div>
+
+<!-- Solution alternative avec JavaScript -->
+<script>
+    // Ajout d'un script JavaScript pour s'assurer que le menu fonctionne
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gestion du menu Inspecteur de variable
+        const inspectorBtn = document.querySelector('.inspector-btn');
+        const inspectorContent = document.querySelector('.inspector-content');
         
-        <div class="content">
-            <div class="card">
-                <h2>Numéros Utiles</h2>
-                <ul class="contact-list">
-                    <li>
-                        <span class="contact-name">Valipost</span>
-                        <span class="contact-number">03 28 76 70 00</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Esker</span>
-                        <span class="contact-number">04 26 99 07 60</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Digit Prio</span>
-                        <span class="contact-number">01 56 38 36 80</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Accueil Neotouch</span>
-                        <span class="contact-number">01 41 06 74 00</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Neotouch Presta</span>
-                        <span class="contact-number">01 73 09 40 93</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Syndic</span>
-                        <span class="contact-number">01 55 69 62 73</span>
-                    </li>
-                    <li>
-                        <span class="contact-name">Distribute</span>
-                        <span class="contact-number">01 55 69 65 00</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h2>Ressources Importantes</h2>
-                <ul class="links-list">
-                    <li>
-                        <a href="https://frouk91.github.io/Neotouch/" target="_blank">Template Escalade</a>
-                    </li>
-                    <li>
-                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FNouvelle%20Codification%20Digitale%200624%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Codification des requêtes</a>
-                    </li>
-                    <li>
-                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FScript%20d%27appels%20%200624%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Script d'appels</a>
-                    </li>
-                    <li>
-                        <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements%2FTache%20pour%20Software%2Epdf&viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements" target="_blank">Tache pour Software</a>
-                    </li>
-                </ul>
+        if(inspectorBtn && inspectorContent) {
+            inspectorBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isDisplayed = inspectorContent.style.display === 'block';
+                inspectorContent.style.display = isDisplayed ? 'none' : 'block';
                 
-            </div>
-            
-            <div class="card">
-                <h2>Liste des Agents Expert</h2>
-                <ul class="agents-list">
-                    <li>
-                        <span class="agent-email">Quadient agentexpert01</span>
-                        <span class="agent-name">Omer</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert02</span>
-                        <span class="agent-name">Philippe</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert03</span>
-                        <span class="agent-name">Adel</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert04</span>
-                        <span class="agent-name">Julien</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert05</span>
-                        <span class="agent-name">Gaël</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert06</span>
-                        <span class="agent-name">Toufik</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert07</span>
-                        <span class="agent-name">Kevin</span>
-                    </li>
-                    <li>
-                        <span class="agent-email">Quadient agentexpert08</span>
-                        <span class="agent-name">Camil</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                // Ferme l'autre menu si ouvert
+                if(ticketContent) {
+                    ticketContent.style.display = 'none';
+                }
+            });
+        }
         
-        <footer>
-            <p>© 2025 Neotouch | Dashboard des ressources</p>
-        </footer>
-    </div>
+        // Gestion du menu Ouvrir un ticket
+        const ticketBtn = document.querySelector('.ticket-btn');
+        const ticketContent = document.querySelector('.ticket-content');
+        
+        if(ticketBtn && ticketContent) {
+            ticketBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isDisplayed = ticketContent.style.display === 'block';
+                ticketContent.style.display = isDisplayed ? 'none' : 'block';
+                
+                // Ferme l'autre menu si ouvert
+                if(inspectorContent) {
+                    inspectorContent.style.display = 'none';
+                }
+            });
+        }
+        
+        // Ferme les menus si on clique ailleurs
+        document.addEventListener('click', function() {
+            if(inspectorContent) inspectorContent.style.display = 'none';
+            if(ticketContent) ticketContent.style.display = 'none';
+        });
+        
+        // Empêche la fermeture des menus quand on clique dedans
+        const menuContents = document.querySelectorAll('.inspector-content, .ticket-content');
+        menuContents.forEach(content => {
+            if(content) {
+                content.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>

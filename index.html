@@ -156,9 +156,15 @@
             background: var(--card-bg);
             color: var(--text-main);
             border-radius: 12px;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 -8px 15px -3px rgba(0, 0, 0, 0.1),
+                        0 10px 25px -5px rgba(0, 0, 0, 0.08), 
+                        0 8px 10px -6px rgba(0, 0, 0, 0.05);
             padding: 1.75rem;
-            transition: all 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                        box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(var(--index, 0) * 0.1s);
+            opacity: 0;
         }
 
         .card h2 {
@@ -329,22 +335,10 @@
             z-index: 1;
         }
         
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 
-                        0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            padding: 1.75rem;
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                        box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: calc(var(--index, 0) * 0.1s);
-            opacity: 0;
-        }
-        
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+            box-shadow: 0 -12px 20px -3px rgba(0, 0, 0, 0.15),
+                        0 20px 25px -5px rgba(0, 0, 0, 0.1), 
                         0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
@@ -733,6 +727,15 @@
         [data-theme="dark"] .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
+            box-shadow: 0 -8px 15px -3px rgba(0, 0, 0, 0.2),
+                        0 10px 25px -5px rgba(0, 0, 0, 0.15), 
+                        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .card:hover {
+            box-shadow: 0 -12px 20px -3px rgba(0, 0, 0, 0.25),
+                        0 20px 25px -5px rgba(0, 0, 0, 0.2), 
+                        0 10px 10px -5px rgba(0, 0, 0, 0.15);
         }
 
         [data-theme="dark"] .contact-list li,

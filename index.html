@@ -7,13 +7,233 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <title>Dashboard Css Digital</title>
 <style>
+        /* Thème clair (par défaut) */
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --tertiary: #27ae60;
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #ef4444;
+            --light: #f9fafb;
+            --dark: #1f2937;
+            --tertiary: #10b981;
+            --hover-light: #f3f4f6;
+            --bg-main: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            --text-main: #1f2937;
+            --card-bg: white;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --border-color: #eee;
+        }
+
+        /* Thème sombre */
+        [data-theme="dark"] {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #f87171;
+            --light: #1f2937;
+            --dark: #e2e8f0;
+            --tertiary: #34d399;
+            --hover-light: #374151;
+            --bg-main: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --text-main: #e2e8f0;
+            --card-bg: #1e293b;
+            --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --border-color: #334155;
+            --dropdown-bg: #1a2234;
+            --hover-bg: #2d3748;
+        }
+
+        /* Bouton de changement de thème */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            border-color: var(--secondary);
+        }
+
+        .theme-toggle:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+
+        .theme-toggle-icon {
+            font-size: 1.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+
+        .theme-toggle[aria-checked="true"] .theme-toggle-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Animation du bouton */
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .theme-toggle:active::before {
+            animation: ripple 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Styles spécifiques pour le mode sombre */
+        [data-theme="dark"] .theme-toggle {
+            background: var(--dropdown-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .theme-toggle:hover {
+            background: var(--hover-bg);
+            border-color: var(--secondary);
+        }
+
+        /* Masquer le texte tout en le gardant accessible */
+        .theme-toggle-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Styles de base mis à jour */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: var(--bg-main);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 2rem;
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Mise à jour des styles des cartes */
+        .card {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 1.75rem;
+            transition: all 0.4s ease;
+        }
+
+        .card h2 {
+            color: var(--primary);
+        }
+
+        /* Mise à jour des styles des liens */
+        .links-list a {
+            background-color: var(--light);
+            color: var(--text-main);
+        }
+
+        /* Mise à jour des styles des contacts */
+        .contact-list li {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-number {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--accent);
+        }
+
+        /* Mise à jour du header */
+        header {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        /* Améliorations d'accessibilité */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--secondary);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Focus visible amélioré */
+        a:focus, button:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        /* Contraste amélioré pour le texte */
+        .contact-name, .agent-email {
+            color: var(--text-main);
+        }
+
+        /* Styles pour les menus déroulants accessibles */
+        .dropdown-menu {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-menu a {
+            color: var(--text-main);
+        }
+
+        /* Ajout des styles pour les focus visibles */
+        :focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        /* Amélioration du contraste pour le footer */
+        footer {
+            color: var(--text-main);
+            opacity: 0.9;
         }
         
         * {
@@ -24,7 +244,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             padding: 2rem;
         }
@@ -32,18 +253,38 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative; /* Ajouté */
+            position: relative;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            z-index: -1;
+            filter: blur(15px);
+        }
+        
+        /* Animation d'entrée pour les cartes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         header {
             background-color: var(--primary);
             color: white;
-            padding: 1.5rem 2rem;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem 2.5rem 1.5rem;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
             position: relative;
-            overflow: visible; /* Modifié de "hidden" à "visible" */
+            overflow: visible;
+            margin-bottom: 0.5rem;
         }
         
         header::before {
@@ -53,57 +294,67 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(239, 68, 68, 0.3));
             z-index: 1;
-            pointer-events: none; /* Ajouté pour permettre les clics à travers */
+            pointer-events: none;
         }
         
         header h1 {
             position: relative;
             z-index: 2;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         header p {
             position: relative;
             z-index: 2;
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            opacity: 0.85;
+            font-weight: 400;
         }
         
         .content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            padding: 2rem;
+            gap: 2rem;
+            padding: 2.5rem;
             background-color: white;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative; /* Ajouté */
-            z-index: 1; /* Ajouté */
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
         
         .card {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 
+                        0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            padding: 1.75rem;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                        box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(var(--index, 0) * 0.1s);
+            opacity: 0;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         .card h2 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
             border-bottom: 2px solid var(--secondary);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
         }
         
         .contact-list {
@@ -111,36 +362,54 @@
         }
         
         .contact-list li {
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid #eee;
+            padding: 0.9rem 0.5rem;
+            margin-bottom: 0.7rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-list li:hover {
+            background-color: var(--hover-light);
         }
         
         .contact-list li:last-child {
             border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
+            padding-bottom: 0.5rem;
         }
         
         .contact-name {
             font-weight: 500;
             color: var(--dark);
+            transition: transform 0.2s ease;
+        }
+        
+        .contact-list li:hover .contact-name {
+            transform: translateX(3px);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         .contact-number {
             font-weight: 600;
             color: var(--accent);
-            background-color: rgba(231, 76, 60, 0.1);
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: rgba(239, 68, 68, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
         
         .contact-number:hover {
-            background-color: rgba(231, 76, 60, 0.2);
+            background-color: rgba(239, 68, 68, 0.2);
+            animation: pulse 0.8s ease-in-out infinite;
         }
         
         .links-list {
@@ -153,40 +422,62 @@
         
         .links-list a {
             display: block;
-            padding: 1rem;
+            padding: 1.1rem 1.2rem;
             background-color: var(--light);
             color: var(--dark);
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
+            border-radius: 10px;
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.3s ease;
             padding-right: 2.5rem;
+        }
+        
+        .links-list a::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.4s ease-out;
+            border-radius: 10px;
         }
         
         .links-list a::after {
             content: "→";
             position: absolute;
             right: 1rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease 0.1s;
         }
         
         .links-list a:hover {
-            background-color: var(--secondary);
             color: white;
-            transform: translateX(5px);
+            padding-left: 1.5rem;
+        }
+        
+        .links-list a:hover::before {
+            transform: scaleX(1);
         }
         
         .links-list a:hover::after {
             transform: translateX(5px);
+            color: white;
         }
         
         footer {
             text-align: center;
             margin-top: 2rem;
             color: var(--dark);
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            padding: 1rem;
         }
         
         @media (max-width: 768px) {
@@ -196,6 +487,14 @@
             
             body {
                 padding: 1rem;
+            }
+            
+            header {
+                padding: 1.5rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
             }
         }
         
@@ -207,25 +506,25 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
             margin-top: 1.5rem;
         }
         
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #2563eb;
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
         }
         
         .btn-accent {
             background-color: var(--accent);
-            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
         }
         
         .btn-accent:hover {
-            background-color: #c0392b;
-            box-shadow: 0 6px 8px rgba(231, 76, 60, 0.4);
+            background-color: #dc2626;
+            box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
         }
         
         .agents-list {
@@ -236,57 +535,84 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.8rem;
+            padding: 0.9rem 0.5rem;
+            margin-bottom: 0.7rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
             border-bottom: 1px solid #eee;
+        }
+        
+        .agents-list li:hover {
+            background-color: var(--hover-light);
         }
         
         .agents-list li:last-child {
             border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
+            padding-bottom: 0.5rem;
         }
         
         .agent-email {
             font-weight: 500;
             color: var(--secondary);
+            transition: transform 0.2s ease;
+        }
+        
+        .agents-list li:hover .agent-email {
+            transform: translateX(3px);
         }
         
         .agent-name {
             font-weight: 600;
             color: var(--dark);
-            background-color: rgba(52, 152, 219, 0.1);
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: rgba(59, 130, 246, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
         
         .agent-name:hover {
-            background-color: rgba(52, 152, 219, 0.2);
-        }
-        
-        /* Style pour le lien du planning - version discrète */
-        .planning-link {
-            display: inline-block;
-            color: white;
-            background-color: var(--secondary);
-            padding: 0.3rem 0.7rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-            position: relative; /* Ajouté */
-            z-index: 10; /* Ajouté */
-        }
-        
-        .planning-link:hover {
-            background-color: #2980b9;
+            background-color: rgba(59, 130, 246, 0.2);
             transform: translateY(-2px);
         }
         
-        /* Style pour le lien du ticket - MODIFIÉ */
-        .ticket-dropdown {
+        /* Style pour les liens dans le header */
+        .planning-link, .adp-link, .ticket-btn, .inspector-btn {
+            display: inline-block;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .planning-link {
+            background-color: var(--secondary);
+        }
+        
+        .planning-link:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .adp-link {
+            background-color: #8e44ad;
+        }
+        
+        .adp-link:hover {
+            background-color: #7d3c98;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Style pour les menus déroulants */
+        .ticket-dropdown, .inspector-dropdown {
             position: relative;
             display: inline-block;
             margin-left: 10px;
@@ -294,147 +620,85 @@
         }
         
         .ticket-btn {
-            display: inline-block;
-            color: white;
             background-color: var(--accent);
-            padding: 0.3rem 0.7rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
-            z-index: 99999;
         }
         
         .ticket-btn:hover {
-            background-color: #c0392b;
+            background-color: #dc2626;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
-        .ticket-content {
+        .inspector-btn {
+            background-color: var(--tertiary);
+            cursor: pointer;
+        }
+        
+        .inspector-btn:hover {
+            background-color: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .ticket-content, .inspector-content {
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            border-radius: 5px;
+            min-width: 180px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 
+                        0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             z-index: 99999;
             left: 0;
-            margin-top: 5px;
+            margin-top: 8px;
             overflow: hidden;
+            transform-origin: top center;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            pointer-events: none;
         }
         
-        .ticket-content a {
+        .ticket-content.active, .inspector-content.active {
+            opacity: 1;
+            transform: translateY(5px);
+            pointer-events: auto;
+        }
+        
+        .ticket-content a, .inspector-content a {
             color: var(--dark);
-            padding: 0.8rem 1rem;
+            padding: 0.9rem 1.1rem;
             text-decoration: none;
             display: block;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
             border-bottom: 1px solid #eee;
             position: relative;
             z-index: 99999;
         }
         
-        .ticket-content a:last-child {
+        .ticket-content a:last-child, .inspector-content a:last-child {
             border-bottom: none;
         }
         
         .ticket-content a:hover {
-            background-color: #f5f5f5;
+            background-color: rgba(239, 68, 68, 0.08);
             color: var(--accent);
-            padding-left: 1.2rem;
-        }
-        
-        .ticket-dropdown:hover .ticket-content {
-            display: block;
-        }
-        
-        /* Style pour le lien ADP */
-        .adp-link {
-            display: inline-block;
-            color: white;
-            background-color: #8e44ad; /* Violet pour distinguer des autres liens */
-            padding: 0.3rem 0.7rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .adp-link:hover {
-            background-color: #7d3c98;
-            transform: translateY(-2px);
-        }
-        
-        /* Style pour l'inspecteur de variable - Complètement revisé */
-        .inspector-dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 10px;
-            z-index: 99999; /* Très haute valeur pour être sûr */
-        }
-        
-        .inspector-btn {
-            display: inline-block;
-            color: white;
-            background-color: var(--tertiary);
-            padding: 0.3rem 0.7rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative; /* Ajouté */
-            z-index: 99999; /* Ajouté */
-        }
-        
-        .inspector-btn:hover {
-            background-color: #219653;
-            transform: translateY(-2px);
-        }
-        
-        .inspector-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            z-index: 99999; /* Très haute valeur */
-            left: 0;
-            margin-top: 5px;
-            overflow: hidden;
-        }
-        
-        .inspector-content a {
-            color: var(--dark);
-            padding: 0.8rem 1rem;
-            text-decoration: none;
-            display: block;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid #eee;
-            position: relative; /* Ajouté */
-            z-index: 99999; /* Ajouté */
-        }
-        
-        .inspector-content a:last-child {
-            border-bottom: none;
+            padding-left: 1.3rem;
         }
         
         .inspector-content a:hover {
-            background-color: #f5f5f5;
+            background-color: rgba(16, 185, 129, 0.08);
             color: var(--tertiary);
-            padding-left: 1.2rem;
+            padding-left: 1.3rem;
         }
         
-        /* Solution alternative avec JavaScript */
+        .ticket-dropdown:hover .ticket-content,
         .inspector-dropdown:hover .inspector-content {
+            transform: translateY(5px);
+            opacity: 1;
+            pointer-events: auto;
             display: block;
         }
         
@@ -442,21 +706,211 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 15px;
             position: relative;
-            z-index: 9999; /* Très haute valeur */
+            z-index: 9999;
+            flex-wrap: wrap;
+        }
+        
+        /* Améliorer l'affichage des icônes */
+        .header-tools svg {
+            vertical-align: middle;
+            margin-right: 6px;
+            transition: transform 0.3s ease;
+        }
+        
+        .planning-link:hover svg, .adp-link:hover svg,
+        .ticket-btn:hover svg, .inspector-btn:hover svg {
+            transform: scale(1.15);
+        }
+
+        /* Ajustements spécifiques pour le mode sombre */
+        [data-theme="dark"] .container::before {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        [data-theme="dark"] .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .contact-list li,
+        [data-theme="dark"] .agents-list li {
+            border-bottom: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+
+        [data-theme="dark"] .contact-list li:hover,
+        [data-theme="dark"] .agents-list li:hover {
+            background: var(--hover-bg);
+        }
+
+        [data-theme="dark"] .contact-number {
+            background-color: rgba(248, 113, 113, 0.1);
+            color: #fca5a5;
+        }
+
+        [data-theme="dark"] header {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .links-list a {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        [data-theme="dark"] .links-list a:hover {
+            background: var(--hover-bg);
+            border-color: var(--secondary);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .ticket-content,
+        [data-theme="dark"] .inspector-content {
+            background: var(--dropdown-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        [data-theme="dark"] .ticket-content a,
+        [data-theme="dark"] .inspector-content a {
+            background: var(--dropdown-bg);
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .ticket-content a:hover,
+        [data-theme="dark"] .inspector-content a:hover {
+            background: var(--hover-bg);
+        }
+
+        [data-theme="dark"] .ticket-btn,
+        [data-theme="dark"] .inspector-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .ticket-btn:hover,
+        [data-theme="dark"] .inspector-btn:hover {
+            background: var(--hover-bg);
+        }
+
+        [data-theme="dark"] footer {
+            color: #94a3b8;
+        }
+
+        [data-theme="dark"] .agent-name {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #93c5fd;
+        }
+
+        [data-theme="dark"] .contact-name,
+        [data-theme="dark"] .agent-email {
+            color: var(--text-main);
+        }
+
+        [data-theme="dark"] .skip-link {
+            background: var(--primary);
+            color: var(--text-main);
+        }
+
+        [data-theme="dark"] .content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Ajustement des transitions pour le mode sombre */
+        .card, .links-list a, .contact-list li, .agents-list li,
+        .ticket-content, .inspector-content, .theme-toggle,
+        .ticket-btn, .inspector-btn {
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .ticket-btn {
+            background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%);
+            border: 1px solid #ef4444;
+            color: #fecaca;
+        }
+
+        [data-theme="dark"] .ticket-btn:hover {
+            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+            border-color: #f87171;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        [data-theme="dark"] .inspector-btn {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            border: 1px solid #10b981;
+            color: #a7f3d0;
+        }
+
+        [data-theme="dark"] .inspector-btn:hover {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            border-color: #34d399;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Mise à jour des menus déroulants pour correspondre à leurs boutons */
+        [data-theme="dark"] .ticket-content {
+            background: #7f1d1d;
+            border: 1px solid #ef4444;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
+
+        [data-theme="dark"] .inspector-content {
+            background: #064e3b;
+            border: 1px solid #10b981;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        [data-theme="dark"] .ticket-content a {
+            color: #fecaca;
+            border-bottom: 1px solid #ef4444;
+        }
+
+        [data-theme="dark"] .inspector-content a {
+            color: #a7f3d0;
+            border-bottom: 1px solid #10b981;
+        }
+
+        [data-theme="dark"] .ticket-content a:hover {
+            background: #991b1b;
+        }
+
+        [data-theme="dark"] .inspector-content a:hover {
+            background: #065f46;
+        }
+
+        /* Ajout d'icônes plus visibles */
+        [data-theme="dark"] .ticket-btn svg,
+        [data-theme="dark"] .inspector-btn svg {
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
     </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<button class="theme-toggle" aria-label="Changer le thème" role="switch" aria-checked="false">
+    <span class="theme-toggle-icon">🌞</span>
+    <span class="theme-toggle-text">Thème clair</span>
+</button>
 <div class="container">
-<header>
+<header role="banner">
 <h1>Dashboard Css Digital</h1>
 <p>Ressources et contacts utiles</p>
 <div class="header-tools">
 <a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true" class="planning-link" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
 <line x1="16" y1="2" x2="16" y2="6"></line>
 <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -464,16 +918,14 @@
 </svg>Planning CS 2025</a>
 
 <a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage" class="adp-link" target="_blank">
-<!-- Nouvelle icône de pointage remplaçant l'icône "+" -->
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
 <circle cx="12" cy="12" r="10"></circle>
 <polyline points="12 6 12 12 16 14"></polyline>
 </svg>ADP</a>
 
-<!-- MENU TICKET MODIFIÉ -->
 <div class="ticket-dropdown">
 <div class="ticket-btn">
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
 </svg>Ouvrir un ticket</div>
 <div class="ticket-content">
@@ -484,7 +936,7 @@
 
 <div class="inspector-dropdown">
 <div class="inspector-btn">
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
 <polyline points="16 18 22 12 16 6"></polyline>
 <polyline points="8 6 2 12 8 18"></polyline>
 </svg>Inspecteur de variable</div>
@@ -495,6 +947,8 @@
 </div>
 </div>
 </header>
+
+<main id="main-content" role="main">
 <div class="content">
 <div class="card">
 <h2>Numéros Utiles</h2>
@@ -533,6 +987,7 @@
 </li>
 </ul>
 </div>
+
 <div class="card">
 <h2>Ressources Importantes</h2>
 <ul class="links-list">
@@ -552,6 +1007,7 @@
 <li>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScbeBxhMpoR9FET7n_NvgK4Hr1AJZsc3P8x4Se6gjk85U57lA/viewform" target="_blank">Dépassement horaire</a></li></ul>
 </div>
+
 <div class="card">
 <h2>Liste des Agents Expert</h2>
 <ul class="agents-list">
@@ -590,65 +1046,148 @@
 </ul>
 </div>
 </div>
-<footer>
+</main>
+
+<footer role="contentinfo">
 <p>© 2025 ICA Support Services | Dashboard des ressources</p>
 </footer>
 </div>
 
-<!-- Solution alternative avec JavaScript -->
 <script>
-    // Ajout d'un script JavaScript pour s'assurer que le menu fonctionne
-    document.addEventListener('DOMContentLoaded', function() {
-        // Gestion du menu Inspecteur de variable
-        const inspectorBtn = document.querySelector('.inspector-btn');
-        const inspectorContent = document.querySelector('.inspector-content');
+// Ajout du code JavaScript pour le changement de thème
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Vérifier si un thème est déjà enregistré
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeToggle(currentTheme === 'dark');
+    } else if (prefersDarkScheme.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        updateThemeToggle(true);
+    }
+    
+    themeToggle.addEventListener('click', function() {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
         
-        if(inspectorBtn && inspectorContent) {
-            inspectorBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isDisplayed = inspectorContent.style.display === 'block';
-                inspectorContent.style.display = isDisplayed ? 'none' : 'block';
-                
-                // Ferme l'autre menu si ouvert
-                if(ticketContent) {
-                    ticketContent.style.display = 'none';
-                }
-            });
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeToggle(newTheme === 'dark');
+    });
+    
+    function updateThemeToggle(isDark) {
+        themeToggle.setAttribute('aria-checked', isDark);
+        themeToggle.querySelector('.theme-toggle-icon').textContent = isDark ? '🌙' : '🌞';
+        themeToggle.querySelector('.theme-toggle-text').textContent = isDark ? 'Thème sombre' : 'Thème clair';
+    }
+    
+    // Gestion des préférences système
+    prefersDarkScheme.addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            let newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateThemeToggle(e.matches);
         }
-        
-        // Gestion du menu Ouvrir un ticket
-        const ticketBtn = document.querySelector('.ticket-btn');
-        const ticketContent = document.querySelector('.ticket-content');
-        
-        if(ticketBtn && ticketContent) {
-            ticketBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isDisplayed = ticketContent.style.display === 'block';
-                ticketContent.style.display = isDisplayed ? 'none' : 'block';
-                
-                // Ferme l'autre menu si ouvert
-                if(inspectorContent) {
-                    inspectorContent.style.display = 'none';
-                }
-            });
-        }
-        
-        // Ferme les menus si on clique ailleurs
-        document.addEventListener('click', function() {
-            if(inspectorContent) inspectorContent.style.display = 'none';
-            if(ticketContent) ticketContent.style.display = 'none';
+    });
+
+    // Amélioration de la gestion des menus déroulants
+    const dropdowns = document.querySelectorAll('.ticket-dropdown, .inspector-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('.ticket-btn, .inspector-btn');
+        const content = dropdown.querySelector('.ticket-content, .inspector-content');
+        let timeoutId;
+        let isMouseOverContent = false;
+        let isMouseOverButton = false;
+
+        // Gestion du survol du bouton
+        button.addEventListener('mouseenter', () => {
+            isMouseOverButton = true;
+            clearTimeout(timeoutId);
+            content.classList.add('active');
+            content.style.display = 'block';
+            button.setAttribute('aria-expanded', 'true');
         });
-        
-        // Empêche la fermeture des menus quand on clique dedans
-        const menuContents = document.querySelectorAll('.inspector-content, .ticket-content');
-        menuContents.forEach(content => {
-            if(content) {
-                content.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
+
+        button.addEventListener('mouseleave', () => {
+            isMouseOverButton = false;
+            handleMouseLeave();
+        });
+
+        // Gestion du survol du menu
+        content.addEventListener('mouseenter', () => {
+            isMouseOverContent = true;
+            clearTimeout(timeoutId);
+        });
+
+        content.addEventListener('mouseleave', () => {
+            isMouseOverContent = false;
+            handleMouseLeave();
+        });
+
+        // Gestion du clic sur le bouton
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                closeDropdown();
+            } else {
+                openDropdown();
+            }
+        });
+
+        // Gestion du clic sur les liens du menu
+        const links = content.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                // Fermer le menu après un court délai pour permettre la navigation
+                setTimeout(() => {
+                    closeDropdown();
+                }, 100);
+            });
+        });
+
+        function handleMouseLeave() {
+            // Attendre que la souris ne soit ni sur le bouton ni sur le contenu
+            if (!isMouseOverButton && !isMouseOverContent) {
+                timeoutId = setTimeout(() => {
+                    closeDropdown();
+                }, 500); // Délai de 500ms avant la fermeture
+            }
+        }
+
+        function openDropdown() {
+            content.classList.add('active');
+            content.style.display = 'block';
+            button.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDropdown() {
+            content.classList.remove('active');
+            content.style.display = 'none';
+            button.setAttribute('aria-expanded', 'false');
+        }
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+
+        // Gestion du clavier
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+                closeDropdown();
+                button.focus();
             }
         });
     });
+});
 </script>
 </body>
 </html>

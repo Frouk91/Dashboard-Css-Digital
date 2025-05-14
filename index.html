@@ -58,7 +58,7 @@
             width: 54px;
             height: 54px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #fff 60%, #f7c873 100%);
+            background: linear-gradient(135deg, #fff 60%, #ccc 100%);
             border: none;
             box-shadow: 0 4px 16px rgba(0,0,0,0.10);
             cursor: pointer;
@@ -79,7 +79,7 @@
 
         .theme-toggle:focus {
             outline: none;
-            box-shadow: 0 0 0 5px #ffe06699;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
         }
 
         .theme-toggle-icon {
@@ -102,8 +102,8 @@
         .sun-icon {
             opacity: 1;
             transform: rotate(0) scale(1);
-            stroke: #f9d923;
-            color: #f9d923;
+            stroke: #333;
+            color: #333;
         }
 
         .moon-icon {
@@ -139,7 +139,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, #ffe06699 0%, transparent 100%);
+            background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, transparent 100%);
             opacity: 0;
             transform: scale(0);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -325,13 +325,13 @@
         header {
             background-color: var(--primary);
             color: white;
-            padding: 2rem 2.5rem 1.5rem;
+            padding: 1.6rem 2.5rem 1.1rem;
             border-radius: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
             position: relative;
             overflow: visible;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         header::before {
@@ -755,14 +755,20 @@
         }
         
         .header-tools {
+            margin-top: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 18px;
+            flex-wrap: wrap;
             position: relative;
             z-index: 9999;
-            flex-wrap: wrap;
+        }
+        
+        /* Harmonisation de l'espacement entre tous les boutons */
+        .header-tools > * {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
         }
         
         /* Améliorer l'affichage des icônes */
@@ -1028,13 +1034,29 @@
             background: #f3f4f6;
             color: #1e293b;
             padding: 0.5rem 0;
-            margin: 0 0 1.5rem 0;
-            box-shadow: 0 4px 24px 0 rgba(30,41,59,0.12), 0 1.5px 0 rgba(30,41,59,0.04);
+            margin: 0 0 1rem 0;
+            box-shadow: 0 0 16px 4px #3b82f6, 0 4px 24px 0 rgba(30,41,59,0.12), 0 1.5px 0 rgba(30,41,59,0.04);
             border-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
             position: relative;
             overflow: hidden;
+            /* Animation continue de zoom */
+            animation: zoomInAstreinte 5s cubic-bezier(.4,0,.2,1) infinite;
+        }
+        @keyframes zoomInAstreinte {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.03);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         .astreinte-banner::after {
             content: '';
@@ -1047,10 +1069,12 @@
         [data-theme="dark"] .astreinte-banner {
             background: #23272f;
             color: #e0e7ff;
-            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22), 0 1.5px 0 rgba(0,0,0,0.10);
+            box-shadow: 0 0 18px 6px #6366f1, 0 4px 24px 0 rgba(0,0,0,0.22), 0 1.5px 0 rgba(0,0,0,0.10);
             border-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
+            /* Animation continue aussi en mode sombre */
+            animation: zoomInAstreinte 5s cubic-bezier(.4,0,.2,1) infinite;
         }
         [data-theme="dark"] .astreinte-banner::after {
             background: linear-gradient(180deg, rgba(99,102,241,0.13) 0%, rgba(59,130,246,0.18) 100%);
@@ -1443,7 +1467,7 @@
 
         /* Effet d'animation pour le switch soleil/lune comme dans le modèle */
         .theme-toggle .sun-icon {
-            color: #f9d923;
+            color: #333;
             opacity: 1;
             transform: rotate(0deg) scale(1);
             transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
@@ -1711,22 +1735,88 @@
         /** FIN MODALES AMÉLIORÉES **/
 
         .no-wrap { white-space: nowrap; }
+
+        header[role="banner"] {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .header-ecusson {
+            height: 160px;
+            width: auto;
+            max-height: 200px;
+            flex-shrink: 0;
+            display: block;
+            background: transparent !important;
+            border: none !important;
+            filter: drop-shadow(0 0 0px #fff) drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #fff);
+        }
+        @media (max-width: 768px) {
+            .header-ecusson {
+                height: 110px;
+                max-height: 140px;
+            }
+        }
+
+        header[role="banner"] {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .header-ecusson {
+            height: 160px;
+            width: auto;
+            max-height: 200px;
+            flex-shrink: 0;
+            display: block;
+			transform: scale(1.25);
+			transform-origin: left center;
+        }
+        .header-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 0%;
+            width: 100%;
+        }
+        .header-main h1 {
+            margin-bottom: 0.5rem;
+        }
+        .header-tools {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 9999;
+        }
+        @media (max-width: 768px) {
+            .header-ecusson {
+                height: 110px;
+                max-height: 140px;
+            }
+            header[role="banner"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .header-main h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <button class="theme-toggle" aria-label="Changer le thème" role="switch" aria-checked="false">
     <span class="theme-toggle-icon">
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="32" height="32">
+            <path d="M 24.90625 3.96875 C 24.863281 3.976563 24.820313 3.988281 24.78125 4 C 24.316406 4.105469 23.988281 4.523438 24 5 L 24 11 C 23.996094 11.359375 24.183594 11.695313 24.496094 11.878906 C 24.808594 12.058594 25.191406 12.058594 25.503906 11.878906 C 25.816406 11.695313 26.003906 11.359375 26 11 L 26 5 C 26.011719 4.710938 25.894531 4.433594 25.6875 4.238281 C 25.476563 4.039063 25.191406 3.941406 24.90625 3.96875 Z M 10.65625 9.84375 C 10.28125 9.910156 9.980469 10.183594 9.875 10.546875 C 9.769531 10.914063 9.878906 11.304688 10.15625 11.5625 L 14.40625 15.8125 C 14.648438 16.109375 15.035156 16.246094 15.410156 16.160156 C 15.78125 16.074219 16.074219 15.78125 16.160156 15.410156 C 16.246094 15.035156 16.109375 14.648438 15.8125 14.40625 L 11.5625 10.15625 C 11.355469 9.933594 11.054688 9.820313 10.75 9.84375 C 10.71875 9.84375 10.6875 9.84375 10.65625 9.84375 Z M 39.03125 9.84375 C 38.804688 9.875 38.59375 9.988281 38.4375 10.15625 L 34.1875 14.40625 C 33.890625 14.648438 33.753906 15.035156 33.839844 15.410156 C 33.925781 15.78125 34.21875 16.074219 34.589844 16.160156 C 34.964844 16.246094 35.351563 16.109375 35.59375 15.8125 L 39.84375 11.5625 C 40.15625 11.265625 40.246094 10.800781 40.0625 10.410156 C 39.875 10.015625 39.460938 9.789063 39.03125 9.84375 Z M 24.90625 15 C 24.875 15.007813 24.84375 15.019531 24.8125 15.03125 C 24.75 15.035156 24.6875 15.046875 24.625 15.0625 C 24.613281 15.074219 24.605469 15.082031 24.59375 15.09375 C 19.289063 15.320313 15 19.640625 15 25 C 15 30.503906 19.496094 35 25 35 C 30.503906 35 35 30.503906 35 25 C 35 19.660156 30.746094 15.355469 25.46875 15.09375 C 25.433594 15.09375 25.410156 15.0625 25.375 15.0625 C 25.273438 15.023438 25.167969 15.003906 25.0625 15 C 25.042969 15 25.019531 15 25 15 C 24.96875 15 24.9375 15 24.90625 15 Z M 24.9375 17 C 24.957031 17 24.980469 17 25 17 C 25.03125 17 25.0625 17 25.09375 17 C 29.46875 17.050781 33 20.613281 33 25 C 33 29.421875 29.421875 33 25 33 C 20.582031 33 17 29.421875 17 25 C 17 20.601563 20.546875 17.035156 24.9375 17 Z M 4.71875 24 C 4.167969 24.078125 3.78125 24.589844 3.859375 25.140625 C 3.9375 25.691406 4.449219 26.078125 5 26 L 11 26 C 11.359375 26.003906 11.695313 25.816406 11.878906 25.503906 C 12.058594 25.191406 12.058594 24.808594 11.878906 24.496094 C 11.695313 24.183594 11.359375 23.996094 11 24 L 5 24 C 4.96875 24 4.9375 24 4.90625 24 C 4.875 24 4.84375 24 4.8125 24 C 4.78125 24 4.75 24 4.71875 24 Z M 38.71875 24 C 38.167969 24.078125 37.78125 24.589844 37.859375 25.140625 C 37.9375 25.691406 38.449219 26.078125 39 26 L 45 26 C 45.359375 26.003906 45.695313 25.816406 45.878906 25.503906 C 46.058594 25.191406 46.058594 24.808594 45.878906 24.496094 C 45.695313 24.183594 45.359375 23.996094 45 24 L 39 24 C 38.96875 24 38.9375 24 38.90625 24 C 38.875 24 38.84375 24 38.8125 24 C 38.78125 24 38.75 24 38.71875 24 Z M 15 33.875 C 14.773438 33.90625 14.5625 34.019531 14.40625 34.1875 L 10.15625 38.4375 C 9.859375 38.679688 9.722656 39.066406 9.808594 39.441406 C 9.894531 39.8125 10.1875 40.105469 10.558594 40.191406 C 10.933594 40.277344 11.320313 40.140625 11.5625 39.84375 L 15.8125 35.59375 C 16.109375 35.308594 16.199219 34.867188 16.039063 34.488281 C 15.882813 34.109375 15.503906 33.867188 15.09375 33.875 C 15.0625 33.875 15.03125 33.875 15 33.875 Z M 34.6875 33.875 C 34.3125 33.941406 34.011719 34.214844 33.90625 34.578125 C 33.800781 34.945313 33.910156 35.335938 34.1875 35.59375 L 38.4375 39.84375 C 38.679688 40.140625 39.066406 40.277344 39.441406 40.191406 C 39.8125 40.105469 40.105469 39.8125 40.191406 39.441406 C 40.277344 39.066406 40.140625 38.679688 39.84375 38.4375 L 35.59375 34.1875 C 35.40625 33.988281 35.148438 33.878906 34.875 33.875 C 34.84375 33.875 34.8125 33.875 34.78125 33.875 C 34.75 33.875 34.71875 33.875 34.6875 33.875 Z M 24.90625 37.96875 C 24.863281 37.976563 24.820313 37.988281 24.78125 38 C 24.316406 38.105469 23.988281 38.523438 24 39 L 24 45 C 23.996094 45.359375 24.183594 45.695313 24.496094 45.878906 C 24.808594 46.058594 25.191406 46.058594 25.503906 45.878906 C 25.816406 45.695313 26.003906 45.359375 26 45 L 26 39 C 26.011719 38.710938 25.894531 38.433594 25.6875 38.238281 C 25.476563 38.039063 25.191406 37.941406 24.90625 37.96875 Z"/>
         </svg>
         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
@@ -1736,43 +1826,46 @@
 </button>
 <div class="container">
 <header role="banner">
-<h1>Dashboard Css Digital</h1>
-<p>Ressources et contacts utiles</p>
-<div class="header-tools">
-<a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true" class="planning-link" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-<line x1="16" y1="2" x2="16" y2="6"></line>
-<line x1="8" y1="2" x2="8" y2="6"></line>
-<line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>Planning CS 2025</a>
+    <img src="ecusson-css-digital.png" alt="Écusson CSS Digital" class="header-ecusson" />
+    <div class="header-main">
+        <h1>Dashboard Css Digital</h1>
+        <p>Ressources et contacts utiles</p>
+        <div class="header-tools">
+            <a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true" class="planning-link" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>Planning CS</a>
 
-<a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage" class="adp-link" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-<circle cx="12" cy="12" r="10"></circle>
-<polyline points="12 6 12 12 16 14"></polyline>
-</svg>ADP</a>
+            <a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage" class="adp-link" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>ADP</a>
 
-<div class="ticket-dropdown">
-<div class="ticket-btn">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-</svg>Ouvrir un ticket</div>
-<div class="ticket-content">
-<a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F" target="_blank">Esker</a>
-<a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1" target="_blank">Primobox</a>
-</div>
-</div>
+            <div class="ticket-dropdown">
+            <div class="ticket-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>Ouvrir un ticket</div>
+            <div class="ticket-content">
+            <a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F" target="_blank">Esker</a>
+            <a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1" target="_blank">Primobox</a>
+            </div>
+            </div>
 
-<div class="inspector-dropdown">
-    <div class="inspector-btn" onclick="window.open('http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php', '_blank')">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>Inspecteur de variable</div>
-    <div class="inspector-content" style="display:none;"></div>
-</div>
-</div>
+            <div class="inspector-dropdown">
+                <div class="inspector-btn" onclick="window.open('http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php', '_blank')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>Inspecteur de variable</div>
+                <div class="inspector-content" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <div class="astreinte-banner">
@@ -1898,7 +1991,7 @@
 </main>
 
 <footer role="contentinfo">
-<p>© 2025 ICA Support Services | Dashboard des ressources</p>
+<p>© 2025 ICA Support Services | Farouk REDOUANE</p>
 </footer>
 </div>
 

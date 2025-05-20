@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Dashboard Css Digital - Ressources et contacts utiles pour le support ICA"/>
-<meta name="theme-color" content="#1e3a8a"/>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="preconnect" href="https://neopostgroup.sharepoint.com">
-<title>Dashboard Css Digital</title>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Dashboard Css Digital - Ressources et contacts utiles pour le support ICA" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://neopostgroup.sharepoint.com">
+    <title>Dashboard Css Digital</title>
+    <style>
         /* Thème clair (par défaut) */
         :root {
             --primary: #1e3a8a;
@@ -60,7 +61,7 @@
             border-radius: 50%;
             background: linear-gradient(135deg, #fff 60%, #ccc 100%);
             border: none;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
             cursor: pointer;
             z-index: 1000;
             display: flex;
@@ -79,7 +80,7 @@
 
         .theme-toggle:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
         }
 
         .theme-toggle-icon {
@@ -139,7 +140,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, transparent 100%);
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
             opacity: 0;
             transform: scale(0);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -180,7 +181,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background: var(--bg-main);
             background-attachment: fixed;
@@ -196,11 +197,11 @@
             color: var(--text-main);
             border-radius: 12px;
             box-shadow: 0 -8px 15px -3px rgba(0, 0, 0, 0.1),
-                        0 10px 25px -5px rgba(0, 0, 0, 0.08), 
-                        0 8px 10px -6px rgba(0, 0, 0, 0.05);
+                0 10px 25px -5px rgba(0, 0, 0, 0.08),
+                0 8px 10px -6px rgba(0, 0, 0, 0.05);
             padding: 1.75rem;
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                        box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: calc(var(--index, 0) * 0.1s);
             opacity: 0;
@@ -249,13 +250,15 @@
         }
 
         /* Focus visible amélioré */
-        a:focus, button:focus {
+        a:focus,
+        button:focus {
             outline: 2px solid var(--secondary);
             outline-offset: 2px;
         }
 
         /* Contraste amélioré pour le texte */
-        .contact-name, .agent-email {
+        .contact-name,
+        .agent-email {
             color: var(--text-main);
         }
 
@@ -280,21 +283,21 @@
             color: var(--text-main);
             opacity: 0.9;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             background-attachment: fixed;
             min-height: 100vh;
             padding: 2rem;
         }
-        
+
         .container {
             width: 92vw;
             max-width: 1600px;
@@ -302,7 +305,7 @@
             margin: 0 auto;
             position: relative;
         }
-        
+
         .container::before {
             content: "";
             position: absolute;
@@ -315,13 +318,20 @@
             z-index: -1;
             filter: blur(15px);
         }
-        
+
         /* Animation d'entrée pour les cartes */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         header {
             background-color: var(--primary);
             color: white;
@@ -333,7 +343,7 @@
             overflow: visible;
             margin-bottom: 1rem;
         }
-        
+
         header::before {
             content: "";
             position: absolute;
@@ -345,7 +355,7 @@
             z-index: 1;
             pointer-events: none;
         }
-        
+
         header h1 {
             position: relative;
             z-index: 2;
@@ -355,7 +365,7 @@
             margin-bottom: 0.75rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        
+
         header p {
             position: relative;
             z-index: 2;
@@ -363,7 +373,7 @@
             opacity: 0.85;
             font-weight: 400;
         }
-        
+
         .content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -377,14 +387,14 @@
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
         }
-        
+
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 -12px 20px -3px rgba(0, 0, 0, 0.15),
-                        0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
+
         .card h2 {
             color: var(--primary);
             margin-bottom: 1.25rem;
@@ -393,11 +403,19 @@
             font-size: 1.6rem;
             letter-spacing: -0.3px;
         }
-        
+.card h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
         .contact-list {
             list-style-type: none;
         }
-        
+
         .contact-list li {
             padding: 0.9rem 0.5rem;
             margin-bottom: 0.7rem;
@@ -408,33 +426,41 @@
             align-items: center;
             border-bottom: 1px solid #eee;
         }
-        
+
         .contact-list li:hover {
             background-color: var(--hover-light);
         }
-        
+
         .contact-list li:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0.5rem;
         }
-        
+
         .contact-name {
             font-weight: 500;
             color: var(--dark);
             transition: transform 0.2s ease;
         }
-        
+
         .contact-list li:hover .contact-name {
             transform: translateX(3px);
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
-        
+
         .contact-number {
             font-weight: 600;
             color: var(--accent);
@@ -443,20 +469,20 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .contact-number:hover {
             background-color: rgba(239, 68, 68, 0.2);
             animation: pulse 0.8s ease-in-out infinite;
         }
-        
+
         .links-list {
             list-style-type: none;
         }
-        
+
         .links-list li {
             margin-bottom: 1rem;
         }
-        
+
         .links-list a {
             display: block;
             padding: 1.1rem 1.2rem;
@@ -471,7 +497,7 @@
             transition: color 0.3s ease;
             padding-right: 2.5rem;
         }
-        
+
         .links-list a::before {
             content: "";
             position: absolute;
@@ -486,36 +512,36 @@
             transition: transform 0.4s ease-out;
             border-radius: 10px;
         }
-        
+
         .links-list a::after {
             content: "→";
             position: absolute;
             right: 1rem;
             transition: transform 0.3s ease 0.1s;
         }
-        
+
         .links-list a:hover {
             color: white;
             padding-left: 1.5rem;
         }
-        
+
         .links-list a:hover::before {
             transform: scaleX(1);
         }
-        
+
         .links-list a:hover::after {
             transform: translateX(5px);
             color: white;
         }
-        
+
         .links-list a:hover {
             background-color: var(--secondary);
         }
-        
+
         .links-list a:hover {
             background-color: var(--secondary);
         }
-        
+
         footer {
             text-align: center;
             margin-top: 2rem;
@@ -524,25 +550,25 @@
             opacity: 0.8;
             padding: 1rem;
         }
-        
+
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
             }
-            
+
             body {
                 padding: 1rem;
             }
-            
+
             header {
                 padding: 1.5rem 1rem;
             }
-            
+
             header h1 {
                 font-size: 2rem;
             }
         }
-        
+
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -555,27 +581,27 @@
             box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
             margin-top: 1.5rem;
         }
-        
+
         .btn:hover {
             background-color: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
         }
-        
+
         .btn-accent {
             background-color: var(--accent);
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
         }
-        
+
         .btn-accent:hover {
             background-color: #dc2626;
             box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
         }
-        
+
         .agents-list {
             list-style-type: none;
         }
-        
+
         .agents-list li {
             display: flex;
             justify-content: space-between;
@@ -586,27 +612,27 @@
             transition: background-color 0.2s ease;
             border-bottom: 1px solid #eee;
         }
-        
+
         .agents-list li:hover {
             background-color: var(--hover-light);
         }
-        
+
         .agents-list li:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0.5rem;
         }
-        
+
         .agent-email {
             font-weight: 500;
             color: var(--secondary);
             transition: transform 0.2s ease;
         }
-        
+
         .agents-list li:hover .agent-email {
             transform: translateX(3px);
         }
-        
+
         .agent-name {
             font-weight: 600;
             color: var(--dark);
@@ -615,14 +641,17 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .agent-name:hover {
             background-color: rgba(59, 130, 246, 0.2);
             transform: translateY(-2px);
         }
-        
+
         /* Style pour les liens dans le header */
-        .planning-link, .adp-link, .ticket-btn, .inspector-btn {
+        .planning-link,
+        .adp-link,
+        .ticket-btn,
+        .inspector-btn {
             display: inline-block;
             color: white;
             padding: 0.5rem 1rem;
@@ -635,36 +664,38 @@
             position: relative;
             z-index: 10;
         }
-        
+
         .planning-link {
             background-color: var(--secondary);
         }
-        
+
         .planning-link:hover {
             background-color: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-        
+
         .adp-link {
             background-color: #8e44ad;
         }
-        
+
         .adp-link:hover {
             background-color: #7d3c98;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-        
+
         /* Style pour les menus déroulants */
-        .ticket-dropdown, .inspector-dropdown {
+        .ticket-dropdown,
+        .inspector-dropdown {
             position: relative;
             display: inline-block;
             margin-left: 10px;
             z-index: 99999;
         }
 
-        .ticket-btn, .inspector-btn {
+        .ticket-btn,
+        .inspector-btn {
             color: white;
             cursor: pointer;
             padding: 0.5rem 1rem;
@@ -701,13 +732,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .ticket-content, .inspector-content {
+        .ticket-content,
+        .inspector-content {
             display: none;
             position: absolute;
             background-color: white;
             min-width: 180px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 
-                        0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+                0 10px 10px -5px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             z-index: 99999;
             left: 0;
@@ -719,14 +751,16 @@
             pointer-events: none;
         }
 
-        .ticket-content.show, .inspector-content.show {
+        .ticket-content.show,
+        .inspector-content.show {
             display: block;
             opacity: 1;
             pointer-events: auto;
             transform: translateY(0);
         }
 
-        .ticket-content a, .inspector-content a {
+        .ticket-content a,
+        .inspector-content a {
             color: var(--dark);
             padding: 0.9rem 1.1rem;
             text-decoration: none;
@@ -738,22 +772,23 @@
             z-index: 99999;
         }
 
-        .ticket-content a:last-child, .inspector-content a:last-child {
+        .ticket-content a:last-child,
+        .inspector-content a:last-child {
             border-bottom: none;
         }
-        
+
         .ticket-content a:hover {
             background-color: rgba(239, 68, 68, 0.08);
             color: var(--accent);
             padding-left: 1.3rem;
         }
-        
+
         .inspector-content a:hover {
             background-color: rgba(16, 185, 129, 0.08);
             color: var(--tertiary);
             padding-left: 1.3rem;
         }
-        
+
         .header-tools {
             margin-top: 15px;
             display: flex;
@@ -764,22 +799,24 @@
             position: relative;
             z-index: 9999;
         }
-        
+
         /* Harmonisation de l'espacement entre tous les boutons */
-        .header-tools > * {
+        .header-tools>* {
             margin-right: 0 !important;
             margin-left: 0 !important;
         }
-        
+
         /* Améliorer l'affichage des icônes */
         .header-tools svg {
             vertical-align: middle;
             margin-right: 6px;
             transition: transform 0.3s ease;
         }
-        
-        .planning-link:hover svg, .adp-link:hover svg,
-        .ticket-btn:hover svg, .inspector-btn:hover svg {
+
+        .planning-link:hover svg,
+        .adp-link:hover svg,
+        .ticket-btn:hover svg,
+        .inspector-btn:hover svg {
             transform: scale(1.15);
         }
 
@@ -792,14 +829,14 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             box-shadow: 0 -8px 15px -3px rgba(0, 0, 0, 0.2),
-                        0 10px 25px -5px rgba(0, 0, 0, 0.15), 
-                        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                0 10px 25px -5px rgba(0, 0, 0, 0.15),
+                0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
 
         [data-theme="dark"] .card:hover {
             box-shadow: 0 -12px 20px -3px rgba(0, 0, 0, 0.25),
-                        0 20px 25px -5px rgba(0, 0, 0, 0.2), 
-                        0 10px 10px -5px rgba(0, 0, 0, 0.15);
+                0 20px 25px -5px rgba(0, 0, 0, 0.2),
+                0 10px 10px -5px rgba(0, 0, 0, 0.15);
         }
 
         [data-theme="dark"] .contact-list li,
@@ -896,9 +933,15 @@
         }
 
         /* Ajustement des transitions pour le mode sombre */
-        .card, .links-list a, .contact-list li, .agents-list li,
-        .ticket-content, .inspector-content, .theme-toggle,
-        .ticket-btn, .inspector-btn {
+        .card,
+        .links-list a,
+        .contact-list li,
+        .agents-list li,
+        .ticket-content,
+        .inspector-content,
+        .theme-toggle,
+        .ticket-btn,
+        .inspector-btn {
             transition: all 0.3s ease;
         }
 
@@ -970,44 +1013,45 @@
         .stats-card {
             display: none;
         }
-        
+
         .stats-notice {
             display: none;
         }
-        
+
         .refresh-btn {
             display: none;
         }
-        
+
         .stats-grid {
             display: none;
         }
-        
+
         .stat-item {
             display: none;
         }
-        
+
         .stat-value {
             display: none;
         }
-        
+
         .stat-label {
             display: none;
         }
-        
+
         .stat-trend {
             display: none;
         }
-        
+
         @keyframes spin {
             from {
                 transform: rotate(0deg);
             }
+
             to {
                 transform: rotate(360deg);
             }
         }
-        
+
         .refresh-btn.loading svg {
             display: none;
         }
@@ -1029,136 +1073,142 @@
         }
 
         /* Styles pour le bandeau d'astreinte */
-        .astreinte-banner {
-            width: 100%;
-            background: #f3f4f6;
-            color: #1e293b;
-            padding: 0.5rem 0;
-            margin: 0 0 1rem 0;
-            box-shadow: 0 0 16px 4px #3b82f6, 0 4px 24px 0 rgba(30,41,59,0.12), 0 1.5px 0 rgba(30,41,59,0.04);
-            border-radius: 0 !important;
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-            position: relative;
-            overflow: hidden;
-            /* Animation continue de zoom */
-            animation: zoomInAstreinte 5s cubic-bezier(.4,0,.2,1) infinite;
-        }
-        @keyframes zoomInAstreinte {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.03);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        .astreinte-banner::after {
-            content: '';
-            position: absolute;
-            left: 0; right: 0; top: 0; bottom: 0;
-            pointer-events: none;
-            background: linear-gradient(180deg, rgba(99,102,241,0.10) 0%, rgba(59,130,246,0.13) 100%);
-            z-index: 1;
-        }
-        [data-theme="dark"] .astreinte-banner {
-            background: #23272f;
-            color: #e0e7ff;
-            box-shadow: 0 0 18px 6px #6366f1, 0 4px 24px 0 rgba(0,0,0,0.22), 0 1.5px 0 rgba(0,0,0,0.10);
-            border-radius: 0 !important;
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-            /* Animation continue aussi en mode sombre */
-            animation: zoomInAstreinte 5s cubic-bezier(.4,0,.2,1) infinite;
-        }
-        [data-theme="dark"] .astreinte-banner::after {
-            background: linear-gradient(180deg, rgba(99,102,241,0.13) 0%, rgba(59,130,246,0.18) 100%);
-        }
-        .astreinte-content, .astreinte-banner > * {
-            position: relative;
-            z-index: 2;
-        }
+        /* ...existing code... */
 
-        .astreinte-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 500;
-            font-size: 0.9rem;
-            gap: 0.75rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+/* Nouvelle entête astreinte élégante et fine */
+.astreinte-banner {
+    width: 100%;
+    background: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 50%, #e0e7ff 100%);
+    color: #1e293b;
+    padding: 0.35rem 0;
+    margin: 0 0 1.2rem 0;
+    box-shadow: 0 2px 16px 0 #3b82f622, 0 2px 12px 0 rgba(30,41,59,0.08);
+    border-radius: 12px;
+    border: 1.5px solid #e0e7ef;
+    position: relative;
+    overflow: visible;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
 
-        .agent {
-            background: rgba(255, 255, 255, 0.12);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.2px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-            color: #e0e7ff;
-        }
+[data-theme="dark"] .astreinte-banner {
+    background: linear-gradient(90deg, #373a5e 0%, #23272f 50%, #373a5e 100%);
+    color: #e0e7ff;
+    border: 1.5px solid #334155;
+    box-shadow: 0 2px 18px 0 #6366f133, 0 2px 12px 0 rgba(0,0,0,0.18);
+}
 
-        .agent:hover {
-            background: rgba(255, 255, 255, 0.18);
-            transform: translateY(-1px);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+.astreinte-content {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    font-size: 1.02rem;
+    font-weight: 500;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0.2rem 1.2rem;
+    justify-content: center; /* centrer horizontalement */
+    text-align: center;      /* centrer le texte à l'intérieur */
+    position: relative;
+}
 
-        [data-theme="dark"] .agent {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.15);
-            color: #e0e7ff;
-        }
+.astreinte-content svg {
+    margin-right: 0.5rem;
+    opacity: 0.85;
+    stroke: #6366f1;
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    transition: stroke 0.3s;
+}
 
-        [data-theme="dark"] .agent:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
+[data-theme="dark"] .astreinte-content svg {
+    stroke: #a5b4fc;
+}
 
-        @media (max-width: 768px) {
-            .astreinte-content {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding: 0 1rem;
-            }
-            
-            .agent {
-                font-size: 0.85rem;
-                padding: 0.2rem 0.5rem;
-            }
-        }
+.astreinte-content span {
+    margin: 0;
+    padding: 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: inherit;
+}
 
-        /* Styles pour les éléments filtrés */
-        .hidden {
-            display: none !important;
-        }
+.astreinte-agents {
+    display: flex;
+    gap: 0.7rem;
+    margin-left: 0.7rem;
+}
 
-        .highlight {
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 2px;
-            padding: 0 2px;
-        }
+.astreinte-banner .agent {
+    background: #e0e7ff;
+    color: #3b82f6;
+    border-radius: 6px;
+    padding: 0.18rem 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    border: 1px solid #c7d2fe;
+    box-shadow: 0 1px 4px #3b82f611;
+    transition: background 0.2s, color 0.2s;
+}
 
-        [data-theme="dark"] .search-wrapper {
-            background: var(--card-bg);
-        }
+[data-theme="dark"] .astreinte-banner .agent {
+    background: #373a5e;
+    color: #a5b4fc;
+    border: 1px solid #6366f1;
+}
 
-        [data-theme="dark"] .shortcut-hint {
-            background: var(--dark);
-            border-color: var(--border-color);
-        }
+.config-btn {
+    margin-left: 1.2rem;
+    background: none;
+    border: none;
+    color: #6366f1;
+    border-radius: 50%;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: none;
+    font-size: 1.1rem;
+}
 
+.config-btn:hover {
+    background: #e0e7ff;
+    color: #3b82f6;
+    box-shadow: 0 2px 8px #3b82f622;
+}
+
+[data-theme="dark"] .config-btn:hover {
+    background: #23272f;
+    color: #a5b4fc;
+}
+
+@media (max-width: 700px) {
+    .astreinte-content {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-size: 0.98rem;
+        padding: 0.3rem 0.5rem;
+    }
+    .astreinte-banner {
+        border-radius: 8px;
+        min-height: 38px;
+    }
+    .astreinte-agents {
+        gap: 0.4rem;
+        margin-left: 0.2rem;
+    }
+    .config-btn {
+        margin-left: 0.5rem;
+    }
+}
+
+/* ...existing code... */
         /* Styles pour les actions rapides */
         .quick-actions {
             position: fixed;
@@ -1174,7 +1224,7 @@
             padding: 0.75rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
             border: 2px solid var(--border-color);
         }
 
@@ -1296,7 +1346,7 @@
             width: 90%;
             max-width: 500px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
             transform: translateY(-20px);
             transition: transform 0.3s ease;
             position: relative;
@@ -1350,17 +1400,8 @@
             min-height: 0;
         }
 
-        .agent-selection {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .agent-select-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+        
+        
 
         .agent-select-group label {
             color: var(--text-main);
@@ -1460,9 +1501,19 @@
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
         }
 
         /* Effet d'animation pour le switch soleil/lune comme dans le modèle */
@@ -1470,18 +1521,21 @@
             color: #333;
             opacity: 1;
             transform: rotate(0deg) scale(1);
-            transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+            transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), opacity 0.3s;
         }
+
         .theme-toggle .moon-icon {
             color: #bfcfff;
             opacity: 0;
             transform: rotate(90deg) scale(0.7);
-            transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+            transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), opacity 0.3s;
         }
+
         [data-theme="dark"] .theme-toggle .sun-icon {
             opacity: 0;
             transform: rotate(-90deg) scale(0.7);
         }
+
         [data-theme="dark"] .theme-toggle .moon-icon {
             opacity: 1;
             transform: rotate(0deg) scale(1);
@@ -1495,77 +1549,68 @@
             height: 32px;
             /* on applique le scale sur l'icône visible */
         }
+
         .theme-toggle .sun-icon {
             transform: scale(1.25) rotate(0deg);
         }
+
         [data-theme="dark"] .theme-toggle .sun-icon {
             transform: scale(1.25) rotate(-90deg) scale(0.7);
         }
+
         .theme-toggle .moon-icon {
             transform: scale(1.25) rotate(90deg) scale(0.7);
         }
+
         [data-theme="dark"] .theme-toggle .moon-icon {
             transform: scale(1.25) rotate(0deg) scale(1);
         }
 
-        .astreinte-banner, .astreinte-banner * {
-            color: #1e293b !important;
-            fill: #1e293b !important;
-        }
-        [data-theme="dark"] .astreinte-banner, [data-theme="dark"] .astreinte-banner * {
-            color: #e0e7ff !important;
-            fill: #e0e7ff !important;
-        }
-        [data-theme="dark"] .astreinte-banner .agent {
-            color: #e0e7ff !important;
-            background: rgba(255,255,255,0.08);
-        }
-        .astreinte-banner .agent {
-            color: #1e293b !important;
-            background: rgba(30,41,59,0.08);
-        }
+        
+        
+        
 
-        .astreinte-banner svg,
-        .astreinte-banner svg * {
-            color: #6366f1 !important;
-            stroke: #6366f1 !important;
-            fill: transparent !important;
-            shape-rendering: geometricPrecision !important;
-        }
-        [data-theme="dark"] .astreinte-banner svg,
-        [data-theme="dark"] .astreinte-banner svg * {
-            color: #a5b4fc !important;
-            stroke: #a5b4fc !important;
-            fill: transparent !important;
-            shape-rendering: geometricPrecision !important;
-        }
+       
 
         /** MODALES AMÉLIORÉES **/
         .modal {
             display: none;
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(30,41,59,0.25);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 41, 59, 0.25);
             backdrop-filter: blur(6px) saturate(120%);
             z-index: 9999999;
             opacity: 0;
-            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+            transition: opacity 0.35s cubic-bezier(.4, 0, .2, 1);
             align-items: center;
             justify-content: center;
         }
+
         .modal.active {
             display: flex;
             opacity: 1;
-            animation: modalFadeIn 0.5s cubic-bezier(.4,0,.2,1);
+            animation: modalFadeIn 0.5s cubic-bezier(.4, 0, .2, 1);
         }
+
         @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+
         .modal-content {
-            background: rgba(255,255,255,0.98);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 22px;
-            box-shadow: 0 8px 40px 0 rgba(30,41,59,0.18), 0 1.5px 0 rgba(30,41,59,0.04);
+            box-shadow: 0 8px 40px 0 rgba(30, 41, 59, 0.18), 0 1.5px 0 rgba(30, 41, 59, 0.04);
             width: 95%;
             max-width: 440px;
             margin: 0 auto;
@@ -1573,16 +1618,24 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            animation: modalPop 0.5s cubic-bezier(.4,0,.2,1);
+            animation: modalPop 0.5s cubic-bezier(.4, 0, .2, 1);
         }
+
         @keyframes modalPop {
-            from { transform: translateY(30px) scale(0.98); }
-            to { transform: translateY(0) scale(1); }
+            from {
+                transform: translateY(30px) scale(0.98);
+            }
+
+            to {
+                transform: translateY(0) scale(1);
+            }
         }
+
         [data-theme="dark"] .modal-content {
-            background: rgba(36,41,54,0.98);
-            box-shadow: 0 8px 40px 0 rgba(0,0,0,0.32), 0 1.5px 0 rgba(0,0,0,0.10);
+            background: rgba(36, 41, 54, 0.98);
+            box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.32), 0 1.5px 0 rgba(0, 0, 0, 0.10);
         }
+
         .modal-header {
             padding: 2rem 2rem 1rem 2rem;
             border-bottom: none;
@@ -1591,6 +1644,7 @@
             align-items: flex-start;
             background: none;
         }
+
         .modal-header h3 {
             font-size: 1.45rem;
             font-weight: 700;
@@ -1598,9 +1652,11 @@
             margin: 0;
             letter-spacing: -0.5px;
         }
+
         [data-theme="dark"] .modal-header h3 {
             color: #a5b4fc;
         }
+
         .close-modal {
             background: none;
             border: none;
@@ -1608,21 +1664,25 @@
             color: var(--accent);
             cursor: pointer;
             border-radius: 50%;
-            width: 44px; height: 44px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background 0.2s, color 0.2s, transform 0.2s;
             margin-left: 1rem;
         }
+
         .close-modal:hover {
             background: var(--hover-light);
             color: var(--secondary);
             transform: rotate(90deg) scale(1.1);
         }
+
         [data-theme="dark"] .close-modal:hover {
             background: var(--hover-bg);
         }
+
         .modal-body {
             padding: 1.5rem 2rem 1.5rem 2rem;
             background: none;
@@ -1632,6 +1692,7 @@
             flex-direction: column;
             gap: 1.2rem;
         }
+
         .modal-footer {
             padding: 1.25rem 2rem 1.5rem 2rem;
             border-top: none;
@@ -1641,25 +1702,36 @@
             background: none;
             position: static;
         }
-        .password-form, .agent-selection {
+
+        .password-form,
+        .agent-selection {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
         }
-        .agent-select-group, .password-form label {
+
+        .agent-select-group,
+        .password-form label {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
-        .agent-select-group label, .password-form label {
+
+        .agent-select-group label,
+        .password-form label {
             font-weight: 600;
             color: var(--primary);
             font-size: 1rem;
         }
-        [data-theme="dark"] .agent-select-group label, [data-theme="dark"] .password-form label {
+
+        [data-theme="dark"] .agent-select-group label,
+        [data-theme="dark"] .password-form label {
             color: #a5b4fc;
         }
-        .agent-select-group select, .password-input, .date-input {
+
+        .agent-select-group select,
+        .password-input,
+        .date-input {
             padding: 0.9rem 1rem;
             border-radius: 10px;
             border: 1.5px solid var(--border-color);
@@ -1668,79 +1740,106 @@
             font-size: 1.08rem;
             width: 100%;
             transition: border 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(59,130,246,0.04);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.04);
         }
-        .agent-select-group select:focus, .password-input:focus, .date-input:focus {
+
+        .agent-select-group select:focus,
+        .password-input:focus,
+        .date-input:focus {
             border-color: var(--secondary);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(59,130,246,0.10);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.10);
         }
-        [data-theme="dark"] .agent-select-group select, [data-theme="dark"] .password-input, [data-theme="dark"] .date-input {
+
+        [data-theme="dark"] .agent-select-group select,
+        [data-theme="dark"] .password-input,
+        [data-theme="dark"] .date-input {
             background: var(--dropdown-bg);
             border-color: var(--border-color);
         }
-        .btn, .btn-primary, .btn-secondary {
+
+        .btn,
+        .btn-primary,
+        .btn-secondary {
             padding: 0.7rem 1.5rem;
             border-radius: 8px;
             font-size: 1.08rem;
             font-weight: 600;
-            box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
             border: none;
             transition: background 0.2s, color 0.2s, transform 0.2s;
         }
+
         .btn-primary {
             background: linear-gradient(90deg, var(--secondary), var(--primary));
             color: #fff;
         }
+
         .btn-primary:hover {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: translateY(-2px) scale(1.04);
         }
+
         .btn-secondary {
             background: var(--hover-light);
             color: var(--primary);
         }
+
         .btn-secondary:hover {
             background: var(--secondary);
             color: #fff;
             transform: translateY(-2px) scale(1.04);
         }
+
         [data-theme="dark"] .btn-secondary {
             background: var(--hover-bg);
             color: #a5b4fc;
         }
+
         [data-theme="dark"] .btn-secondary:hover {
             background: var(--secondary);
             color: #fff;
         }
+
         .error-message {
             font-size: 0.98rem;
             color: var(--accent);
-            background: rgba(239,68,68,0.08);
+            background: rgba(239, 68, 68, 0.08);
             border-radius: 6px;
             padding: 0.5rem 1rem;
             margin-top: 0.5rem;
             animation: shake 0.5s ease-in-out;
         }
+
         @media (max-width: 600px) {
-            .modal-content, .modal-header, .modal-body, .modal-footer {
+
+            .modal-content,
+            .modal-header,
+            .modal-body,
+            .modal-footer {
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
             }
-            .modal-header, .modal-footer {
+
+            .modal-header,
+            .modal-footer {
                 padding-top: 1rem !important;
                 padding-bottom: 1rem !important;
             }
         }
+
         /** FIN MODALES AMÉLIORÉES **/
 
-        .no-wrap { white-space: nowrap; }
+        .no-wrap {
+            white-space: nowrap;
+        }
 
         header[role="banner"] {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
+
         .header-ecusson {
             height: 160px;
             width: auto;
@@ -1751,6 +1850,7 @@
             border: none !important;
             filter: drop-shadow(0 0 0px #fff) drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #fff);
         }
+
         @media (max-width: 768px) {
             .header-ecusson {
                 height: 110px;
@@ -1766,15 +1866,17 @@
             padding-left: 2rem;
             padding-right: 2rem;
         }
+
         .header-ecusson {
             height: 160px;
             width: auto;
             max-height: 200px;
             flex-shrink: 0;
             display: block;
-			transform: scale(1.25);
-			transform-origin: left center;
+            transform: scale(1.25);
+            transform-origin: left center;
         }
+
         .header-main {
             display: flex;
             flex-direction: column;
@@ -1783,9 +1885,11 @@
             flex: 1 1 0%;
             width: 100%;
         }
+
         .header-main h1 {
             margin-bottom: 0.5rem;
         }
+
         .header-tools {
             margin-top: 15px;
             display: flex;
@@ -1796,621 +1900,946 @@
             position: relative;
             z-index: 9999;
         }
+
         @media (max-width: 768px) {
             .header-ecusson {
                 height: 110px;
                 max-height: 140px;
             }
+
             header[role="banner"] {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
+
             .header-main h1 {
                 font-size: 2rem;
             }
         }
+
+        
+
+        
+}
+
+@keyframes spin-glow {
+    0% { transform: translate(-50%, -50%) rotate(0deg);}
+    100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+@keyframes splash-img-wow {
+    0% { opacity: 0; transform: scale(0.7) rotate(-10deg);}
+    60% { opacity: 1; transform: scale(1.15) rotate(2deg);}
+    80% { transform: scale(0.95) rotate(-1deg);}
+    100% { opacity: 1; transform: scale(1) rotate(0);}
+}
+@keyframes splash-title-wow {
+    0% { opacity: 0; transform: translateY(40px);}
+    60% { opacity: 0.7; transform: translateY(-10px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+#typewriter-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    background: linear-gradient(90deg, #7df9ff, #fff, #3b82f6, #7df9ff 80%);
+    background-size: 300% 100%;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: 'Share Tech Mono', 'Fira Mono', 'Consolas', monospace;
+    border-right: 2.5px solid #7df9ff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        blink-caret 0.5s step-end infinite alternate,
+        gradient-move 2.5s linear infinite;
+    opacity: 1;
+    text-shadow: 0 2px 16px #7df9ff88, 0 0 24px #3b82f6;
+}
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+@keyframes blink-caret {
+    0%, 100% { border-color: #7df9ff; }
+    50% { border-color: transparent; }
+}
+.splash-scan {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 260px;
+    height: 60px;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    background: linear-gradient(90deg, transparent 0%, #7df9ff88 50%, transparent 100%);
+    opacity: 0.7;
+    border-radius: 50%;
+    filter: blur(12px);
+    z-index: 1;
+    animation: scan-move 1.8s cubic-bezier(.4,0,.2,1) infinite;
+    pointer-events: none;
+}
+@keyframes scan-move {
+    0% { top: 40%; opacity: 0.2; }
+    40% { opacity: 0.7; }
+    60% { opacity: 0.7; }
+    100% { top: 60%; opacity: 0.2; }
+}
+.futuristic-title {
+    font-family: 'Share Tech Mono', 'Fira Mono', 'Consolas', monospace;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em; /* Espacement réduit */
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.08;
+    background: none;
+    filter: drop-shadow(0 2px 12px #7df9ff88);
+}
+.futuristic-title .main {
+    background: linear-gradient(90deg, #7df9ff 0%, #fff 40%, #3b82f6 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradient-move 3s linear infinite;
+    font-size: 1.05em;
+    letter-spacing: 0.04em; /* Espacement très léger */
+    font-weight: 900;
+    text-shadow: 0 2px 16px #7df9ff88, 0 0 24px #3b82f6;
+}
+.futuristic-title .sub {
+    margin-top: 0.10em;
+    font-size: 0.7em;
+    letter-spacing: 0.12em;
+    color: #7df9ff;
+    background: linear-gradient(90deg, #7df9ff 0%, #3b82f6 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradient-move 2.5s linear infinite;
+    font-weight: 700;
+    text-shadow: 0 2px 16px #7df9ff88, 0 0 24px #3b82f6;
+}
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+/* --- PRELOADER CSS --- */
+#preloader {
+    background: radial-gradient(circle at center, #233447 0%, #0b111d 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999999;
+    animation: fadeOutPreloader 1s ease forwards;
+    animation-delay: 4s;
+}
+
+#preloader img {
+    width: 180px;
+    height: auto;
+    animation: zoomInPreloader 1.5s ease-out, pulseGlowPreloader 2s infinite ease-in-out;
+}
+
+#preloader p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #8ab4f8;
+    letter-spacing: 2px;
+    animation: fadeInPreloader 2s ease-in-out;
+}
+
+@keyframes fadeOutPreloader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes fadeInPreloader {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes zoomInPreloader {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes pulseGlowPreloader {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px #8ab4f8);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px #8ab4f8);
+    }
+}
+/* Masque le contenu pendant le preloader */
+body.preloader-active .container,
+body.preloader-active header,
+body.preloader-active main,
+body.preloader-active footer {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+body:not(.preloader-active) .container,
+body:not(.preloader-active) header,
+body:not(.preloader-active) main,
+body:not(.preloader-active) footer {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.6s;
+}
+
     </style>
+
+<style>
+/* === DÉBUT AJOUT STYLE OPTION 4 === */
+.planning-link,
+.adp-link,
+.ticket-btn,
+.inspector-btn {
+    background-color: #374151 !important;
+    color: #7df9ff !important;
+    border: 1.5px solid #7df9ff !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(125, 249, 255, 0.15);
+}
+.planning-link:hover,
+.adp-link:hover,
+.ticket-btn:hover,
+.inspector-btn:hover {
+    background-color: #1f2937 !important;
+    color: #7df9ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(125, 249, 255, 0.3);
+}
+[data-theme="dark"] .planning-link,
+[data-theme="dark"] .adp-link,
+[data-theme="dark"] .ticket-btn,
+[data-theme="dark"] .inspector-btn {
+    background-color: #0f172a !important;
+    color: #7df9ff !important;
+    border: 1.5px solid #7df9ff !important;
+    box-shadow: 0 4px 10px rgba(125, 249, 255, 0.2);
+}
+[data-theme="dark"] .planning-link:hover,
+[data-theme="dark"] .adp-link:hover,
+[data-theme="dark"] .ticket-btn:hover,
+[data-theme="dark"] .inspector-btn:hover {
+    background-color: #1e293b !important;
+    color: #7df9ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(125, 249, 255, 0.4);
+}
+/* === FIN AJOUT STYLE OPTION 4 === */
+
+/* === HARMONISATION ICONES DES BLOCS === */
+.card h2 svg {
+    color: var(--secondary) !important;
+    stroke: var(--secondary) !important;
+    fill: var(--secondary) !important;
+    opacity: 0.95;
+    width: 1.4em;
+    height: 1.4em;
+    flex-shrink: 0;
+}
+[data-theme="dark"] .card h2 svg {
+    color: var(--secondary) !important;
+    stroke: var(--secondary) !important;
+    fill: var(--secondary) !important;
+    opacity: 0.95;
+}
+/* === FIN ICONES UNIFORMISÉES === */
+.planning-link svg,
+.adp-link svg {
+    vertical-align: middle;
+    margin-right: 8px;
+    position: relative;
+    top: -2px; /* Ajustez cette valeur pour un alignement parfait */
+    /* Essayez top: -1px ou top: 0 si besoin */
+}
+    </style>
+
 </head>
+
 <body>
-<a href="#main-content" class="skip-link">Aller au contenu principal</a>
-<button class="theme-toggle" aria-label="Changer le thème" role="switch" aria-checked="false">
-    <span class="theme-toggle-icon">
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="32" height="32">
-            <path d="M 24.90625 3.96875 C 24.863281 3.976563 24.820313 3.988281 24.78125 4 C 24.316406 4.105469 23.988281 4.523438 24 5 L 24 11 C 23.996094 11.359375 24.183594 11.695313 24.496094 11.878906 C 24.808594 12.058594 25.191406 12.058594 25.503906 11.878906 C 25.816406 11.695313 26.003906 11.359375 26 11 L 26 5 C 26.011719 4.710938 25.894531 4.433594 25.6875 4.238281 C 25.476563 4.039063 25.191406 3.941406 24.90625 3.96875 Z M 10.65625 9.84375 C 10.28125 9.910156 9.980469 10.183594 9.875 10.546875 C 9.769531 10.914063 9.878906 11.304688 10.15625 11.5625 L 14.40625 15.8125 C 14.648438 16.109375 15.035156 16.246094 15.410156 16.160156 C 15.78125 16.074219 16.074219 15.78125 16.160156 15.410156 C 16.246094 15.035156 16.109375 14.648438 15.8125 14.40625 L 11.5625 10.15625 C 11.355469 9.933594 11.054688 9.820313 10.75 9.84375 C 10.71875 9.84375 10.6875 9.84375 10.65625 9.84375 Z M 39.03125 9.84375 C 38.804688 9.875 38.59375 9.988281 38.4375 10.15625 L 34.1875 14.40625 C 33.890625 14.648438 33.753906 15.035156 33.839844 15.410156 C 33.925781 15.78125 34.21875 16.074219 34.589844 16.160156 C 34.964844 16.246094 35.351563 16.109375 35.59375 15.8125 L 39.84375 11.5625 C 40.15625 11.265625 40.246094 10.800781 40.0625 10.410156 C 39.875 10.015625 39.460938 9.789063 39.03125 9.84375 Z M 24.90625 15 C 24.875 15.007813 24.84375 15.019531 24.8125 15.03125 C 24.75 15.035156 24.6875 15.046875 24.625 15.0625 C 24.613281 15.074219 24.605469 15.082031 24.59375 15.09375 C 19.289063 15.320313 15 19.640625 15 25 C 15 30.503906 19.496094 35 25 35 C 30.503906 35 35 30.503906 35 25 C 35 19.660156 30.746094 15.355469 25.46875 15.09375 C 25.433594 15.09375 25.410156 15.0625 25.375 15.0625 C 25.273438 15.023438 25.167969 15.003906 25.0625 15 C 25.042969 15 25.019531 15 25 15 C 24.96875 15 24.9375 15 24.90625 15 Z M 24.9375 17 C 24.957031 17 24.980469 17 25 17 C 25.03125 17 25.0625 17 25.09375 17 C 29.46875 17.050781 33 20.613281 33 25 C 33 29.421875 29.421875 33 25 33 C 20.582031 33 17 29.421875 17 25 C 17 20.601563 20.546875 17.035156 24.9375 17 Z M 4.71875 24 C 4.167969 24.078125 3.78125 24.589844 3.859375 25.140625 C 3.9375 25.691406 4.449219 26.078125 5 26 L 11 26 C 11.359375 26.003906 11.695313 25.816406 11.878906 25.503906 C 12.058594 25.191406 12.058594 24.808594 11.878906 24.496094 C 11.695313 24.183594 11.359375 23.996094 11 24 L 5 24 C 4.96875 24 4.9375 24 4.90625 24 C 4.875 24 4.84375 24 4.8125 24 C 4.78125 24 4.75 24 4.71875 24 Z M 38.71875 24 C 38.167969 24.078125 37.78125 24.589844 37.859375 25.140625 C 37.9375 25.691406 38.449219 26.078125 39 26 L 45 26 C 45.359375 26.003906 45.695313 25.816406 45.878906 25.503906 C 46.058594 25.191406 46.058594 24.808594 45.878906 24.496094 C 45.695313 24.183594 45.359375 23.996094 45 24 L 39 24 C 38.96875 24 38.9375 24 38.90625 24 C 38.875 24 38.84375 24 38.8125 24 C 38.78125 24 38.75 24 38.71875 24 Z M 15 33.875 C 14.773438 33.90625 14.5625 34.019531 14.40625 34.1875 L 10.15625 38.4375 C 9.859375 38.679688 9.722656 39.066406 9.808594 39.441406 C 9.894531 39.8125 10.1875 40.105469 10.558594 40.191406 C 10.933594 40.277344 11.320313 40.140625 11.5625 39.84375 L 15.8125 35.59375 C 16.109375 35.308594 16.199219 34.867188 16.039063 34.488281 C 15.882813 34.109375 15.503906 33.867188 15.09375 33.875 C 15.0625 33.875 15.03125 33.875 15 33.875 Z M 34.6875 33.875 C 34.3125 33.941406 34.011719 34.214844 33.90625 34.578125 C 33.800781 34.945313 33.910156 35.335938 34.1875 35.59375 L 38.4375 39.84375 C 38.679688 40.140625 39.066406 40.277344 39.441406 40.191406 C 39.8125 40.105469 40.105469 39.8125 40.191406 39.441406 C 40.277344 39.066406 40.140625 38.679688 39.84375 38.4375 L 35.59375 34.1875 C 35.40625 33.988281 35.148438 33.878906 34.875 33.875 C 34.84375 33.875 34.8125 33.875 34.78125 33.875 C 34.75 33.875 34.71875 33.875 34.6875 33.875 Z M 24.90625 37.96875 C 24.863281 37.976563 24.820313 37.988281 24.78125 38 C 24.316406 38.105469 23.988281 38.523438 24 39 L 24 45 C 23.996094 45.359375 24.183594 45.695313 24.496094 45.878906 C 24.808594 46.058594 25.191406 46.058594 25.503906 45.878906 C 25.816406 45.695313 26.003906 45.359375 26 45 L 26 39 C 26.011719 38.710938 25.894531 38.433594 25.6875 38.238281 C 25.476563 38.039063 25.191406 37.941406 24.90625 37.96875 Z"/>
-        </svg>
-        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
-        </svg>
-    </span>
-    <span class="theme-toggle-text">Thème clair</span>
-</button>
-<div class="container">
-<header role="banner">
-    <img src="ecusson-css-digital.png" alt="Écusson CSS Digital" class="header-ecusson" />
-    <div class="header-main">
-        <h1>Dashboard Css Digital</h1>
-        <p>Ressources et contacts utiles</p>
-        <div class="header-tools">
-            <a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true" class="planning-link" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>Planning CS</a>
-
-            <a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage" class="adp-link" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>ADP</a>
-
-            <div class="ticket-dropdown">
-            <div class="ticket-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            </svg>Ouvrir un ticket</div>
-            <div class="ticket-content">
-            <a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F" target="_blank">Esker</a>
-            <a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1" target="_blank">Primobox</a>
-            </div>
-            </div>
-
-            <div class="inspector-dropdown">
-                <div class="inspector-btn" onclick="window.open('http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php', '_blank')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>Inspecteur de variable</div>
-                <div class="inspector-content" style="display:none;"></div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<div class="astreinte-banner">
-    <div class="astreinte-content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-        <span>Astreintes du vendredi <span id="friday-date"></span>:</span>
-        <div class="astreinte-agents">
-            <span class="agent" id="agent1">Agent 1</span>
-            <span class="agent" id="agent2">Agent 2</span>
-        </div>
-        <button class="config-btn" id="configAstreinte" aria-label="Configurer les astreintes">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+	<!-- PRELOADER ANIMATION -->
+<div id="preloader">
+    <img src="ecusson-css-digital.png" alt="CSS Digital Logo">
+    <p>Chargement du noyau Css Digital....</p>
+</div>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <button class="theme-toggle" aria-label="Changer le thème" role="switch" aria-checked="false">
+        <span class="theme-toggle-icon">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="32" height="32">
+                <path
+                    d="M 24.90625 3.96875 C 24.863281 3.976563 24.820313 3.988281 24.78125 4 C 24.316406 4.105469 23.988281 4.523438 24 5 L 24 11 C 23.996094 11.359375 24.183594 11.695313 24.496094 11.878906 C 24.808594 12.058594 25.191406 12.058594 25.503906 11.878906 C 25.816406 11.695313 26.003906 11.359375 26 11 L 26 5 C 26.011719 4.710938 25.894531 4.433594 25.6875 4.238281 C 25.476563 4.039063 25.191406 3.941406 24.90625 3.96875 Z M 10.65625 9.84375 C 10.28125 9.910156 9.980469 10.183594 9.875 10.546875 C 9.769531 10.914063 9.878906 11.304688 10.15625 11.5625 L 14.40625 15.8125 C 14.648438 16.109375 15.035156 16.246094 15.410156 16.160156 C 15.78125 16.074219 16.074219 15.78125 16.160156 15.410156 C 16.246094 15.035156 16.109375 14.648438 15.8125 14.40625 L 11.5625 10.15625 C 11.355469 9.933594 11.054688 9.820313 10.75 9.84375 C 10.71875 9.84375 10.6875 9.84375 10.65625 9.84375 Z M 39.03125 9.84375 C 38.804688 9.875 38.59375 9.988281 38.4375 10.15625 L 34.1875 14.40625 C 33.890625 14.648438 33.753906 15.035156 33.839844 15.410156 C 33.925781 15.78125 34.21875 16.074219 34.589844 16.160156 C 34.964844 16.246094 35.351563 16.109375 35.59375 15.8125 L 39.84375 11.5625 C 40.15625 11.265625 40.246094 10.800781 40.0625 10.410156 C 39.875 10.015625 39.460938 9.789063 39.03125 9.84375 Z M 24.90625 15 C 24.875 15.007813 24.84375 15.019531 24.8125 15.03125 C 24.75 15.035156 24.6875 15.046875 24.625 15.0625 C 24.613281 15.074219 24.605469 15.082031 24.59375 15.09375 C 19.289063 15.320313 15 19.640625 15 25 C 15 30.503906 19.496094 35 25 35 C 30.503906 35 35 30.503906 35 25 C 35 19.660156 30.746094 15.355469 25.46875 15.09375 C 25.433594 15.09375 25.410156 15.0625 25.375 15.0625 C 25.273438 15.023438 25.167969 15.003906 25.0625 15 C 25.042969 15 25.019531 15 25 15 C 24.96875 15 24.9375 15 24.90625 15 Z M 24.9375 17 C 24.957031 17 24.980469 17 25 17 C 25.03125 17 25.0625 17 25.09375 17 C 29.46875 17.050781 33 20.613281 33 25 C 33 29.421875 29.421875 33 25 33 C 20.582031 33 17 29.421875 17 25 C 17 20.601563 20.546875 17.035156 24.9375 17 Z M 4.71875 24 C 4.167969 24.078125 3.78125 24.589844 3.859375 25.140625 C 3.9375 25.691406 4.449219 26.078125 5 26 L 11 26 C 11.359375 26.003906 11.695313 25.816406 11.878906 25.503906 C 12.058594 25.191406 12.058594 24.808594 11.878906 24.496094 C 11.695313 24.183594 11.359375 23.996094 11 24 L 5 24 C 4.96875 24 4.9375 24 4.90625 24 C 4.875 24 4.84375 24 4.8125 24 C 4.78125 24 4.75 24 4.71875 24 Z M 38.71875 24 C 38.167969 24.078125 37.78125 24.589844 37.859375 25.140625 C 37.9375 25.691406 38.449219 26.078125 39 26 L 45 26 C 45.359375 26.003906 45.695313 25.816406 45.878906 25.503906 C 46.058594 25.191406 46.058594 24.808594 45.878906 24.496094 C 45.695313 24.183594 45.359375 23.996094 45 24 L 39 24 C 38.96875 24 38.9375 24 38.90625 24 C 38.875 24 38.84375 24 38.8125 24 C 38.78125 24 38.75 24 38.71875 24 Z M 15 33.875 C 14.773438 33.90625 14.5625 34.019531 14.40625 34.1875 L 10.15625 38.4375 C 9.859375 38.679688 9.722656 39.066406 9.808594 39.441406 C 9.894531 39.8125 10.1875 40.105469 10.558594 40.191406 C 10.933594 40.277344 11.320313 40.140625 11.5625 39.84375 L 15.8125 35.59375 C 16.109375 35.308594 16.199219 34.867188 16.039063 34.488281 C 15.882813 34.109375 15.503906 33.867188 15.09375 33.875 C 15.0625 33.875 15.03125 33.875 15 33.875 Z M 34.6875 33.875 C 34.3125 33.941406 34.011719 34.214844 33.90625 34.578125 C 33.800781 34.945313 33.910156 35.335938 34.1875 35.59375 L 38.4375 39.84375 C 38.679688 40.140625 39.066406 40.277344 39.441406 40.191406 C 39.8125 40.105469 40.105469 39.8125 40.191406 39.441406 C 40.277344 39.066406 40.140625 38.679688 39.84375 38.4375 L 35.59375 34.1875 C 35.40625 33.988281 35.148438 33.878906 34.875 33.875 C 34.84375 33.875 34.8125 33.875 34.78125 33.875 C 34.75 33.875 34.71875 33.875 34.6875 33.875 Z M 24.90625 37.96875 C 24.863281 37.976563 24.820313 37.988281 24.78125 38 C 24.316406 38.105469 23.988281 38.523438 24 39 L 24 45 C 23.996094 45.359375 24.183594 45.695313 24.496094 45.878906 C 24.808594 46.058594 25.191406 46.058594 25.503906 45.878906 C 25.816406 45.695313 26.003906 45.359375 26 45 L 26 39 C 26.011719 38.710938 25.894531 38.433594 25.6875 38.238281 C 25.476563 38.039063 25.191406 37.941406 24.90625 37.96875 Z" />
             </svg>
-        </button>
-    </div>
-</div>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+            </svg>
+        </span>
+        <span class="theme-toggle-text">Thème clair</span>
+    </button>
+    <div class="container">
+        <header role="banner">
+            <img src="ecusson-css-digital.png" alt="Écusson CSS Digital" class="header-ecusson" />
+            <div class="header-main">
+                <h1 class="futuristic-title">
+					<span>Dashboard</span>					
+				</h1>
+                <p>Ressources et contacts utiles</p>
+                <div class="header-tools">
+                    <a href="https://neopostgroup.sharepoint.com/:x:/r/teams/EUR_FRANeopostServices/_layouts/15/Doc.aspx?sourcedoc=%7BA5E9B3C3-8E7B-4782-B237-B17DE798D774%7D&file=Planning%20CS%202025.xlsx&action=default&mobileredirect=true"
+                        class="planning-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align: middle; margin-right: 6px;">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>Planning CS</a>
 
-<main id="main-content" role="main">
-<div class="content">
-<div class="card">
-<h2>Numéros Utiles</h2>
-<ul class="contact-list">
-<li>
-<span class="contact-name">Accueil Quadient</span>
-<span class="contact-number">0 892 892 111</span>
-</li>
-<li>
-<span class="contact-name">Neotouch & Neobox</span>
-<span class="contact-number no-wrap">01 41 06 74 00</span>
-</li>
-<li>
-<span class="contact-name">Neotouch Prio</span>
-<span class="contact-number">01 56 38 36 80</span>
-</li>
-<li>
-<span class="contact-name">Neotouch Syndic</span>
-<span class="contact-number">01 55 69 62 73</span>
-</li>
-<li>
-<span class="contact-name">Neotouch Presta</span>
-<span class="contact-number">01 73 09 40 93</span>
-</li>
-<li>
-<span class="contact-name">Esker</span>
-<span class="contact-number">04 26 99 07 60</span>
-</li>
-<li>
-<span class="contact-name">Impress Distribute</span>
-<span class="contact-number">01 55 69 65 00</span>
-</li>
-<li>
-<span class="contact-name">Impress Automate</span>
-<span class="contact-number">03 28 76 70 00</span>
-</li>
-</ul>
-</div>
+                    <a href="https://online.emea.adp.com/signin/v1?APPID=FR_Offers&productId=157a7c6f-7a3b-4da4-b7eb-7717c6188894&returnURL=https://pointage.adp.com/igested/pointage&callingAppId=FR_Offers&TARGET=-SM-https://pointage.adp.com/igested/pointage"
+                        class="adp-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align: middle; margin-right: 6px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>ADP</a>
 
-<div class="card">
-<h2>Ressources Importantes</h2>
-<ul class="links-list">
-<li>
-<a href="https://frouk91.github.io/Neotouch/" target="_blank">Template Escalade</a>
-</li>
-<li>
-<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FNouvelle%20Codification%20Digitale%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Codification des requêtes</a>
-</li>
-<li>
-<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FScript%20d%27appels%20%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024" target="_blank">Script d'appels</a>
-</li>
-<li>
-<a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements%2FTache%20pour%20Software%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements" target="_blank">Tache pour Software</a>
-</li>
-<li>
-<a href="https://neopostgroup.sharepoint.com/:b:/r/teams/EUR_FRANeopostServices/Shared%20Documents/03%20-%20Centre%20de%20Services%20Excellence/03%20-%20EQUIPES%20CSE/D%C3%A9pt.%20CSS%20Digital/Accompagnements/Book%20Tarifs%20Neotouch%20F%C3%A9vrier%202025_V2.pdf?csf=1&web=1&e=vlY1jx" target="_blank">Book Tarif</a>
-</li>
-<li><a href="https://www.trustesker.com" target="_blank">État des tours Esker</a>
-<li>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScbeBxhMpoR9FET7n_NvgK4Hr1AJZsc3P8x4Se6gjk85U57lA/viewform" target="_blank">Dépassement horaire</a></li></ul>
-</div>
+                    <div class="ticket-dropdown">
+                        <div class="ticket-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>Ouvrir un ticket
+                        </div>
+                        <div class="ticket-content">
+                            <a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F"
+                                target="_blank">Esker</a>
+                            <a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1"
+                                target="_blank">Primobox</a>
+                        </div>
+                    </div>
 
-<div class="card">
-<h2>Liste des Agents Expert</h2>
-<ul class="agents-list">
-<li>
-<span class="agent-email">Quadient agentexpert01</span>
-<span class="agent-name">Omer</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert02</span>
-<span class="agent-name">Philippe</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert03</span>
-<span class="agent-name">Adel</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert04</span>
-<span class="agent-name">Julien</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert05</span>
-<span class="agent-name">Gaël</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert06</span>
-<span class="agent-name">Toufik</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert07</span>
-<span class="agent-name">Kevin</span>
-</li>
-<li>
-<span class="agent-email">Quadient agentexpert08</span>
-<span class="agent-name">Camil</span>
-</li>
-</ul>
-</div>
-</div>
-</main>
-
-<footer role="contentinfo">
-<p>© 2025 ICA Support Services | Farouk REDOUANE</p>
-</footer>
-</div>
-
-<!-- Modal de configuration des astreintes -->
-<div class="modal" id="astreinteModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div>
-                <h3>Configuration des astreintes</h3>
-                <p style="margin-top: 0.5rem; color: var(--secondary); font-size: 0.9rem;">Pour le vendredi <span id="modalFridayDate"></span></p>
-            </div>
-            <button class="close-modal" aria-label="Fermer">×</button>
-        </div>
-        <div class="modal-body">
-            <div class="agent-selection">
-                <div class="agent-select-group">
-                    <label for="dateSelect">Date :</label>
-                    <input type="date" id="dateSelect" class="date-input" style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-size: 1rem; width: 100%; margin-bottom: 1rem;">
-                </div>
-                <div class="agent-select-group">
-                    <label for="agent1Select">Agent 1:</label>
-                    <select id="agent1Select"></select>
-                </div>
-                <div class="agent-select-group">
-                    <label for="agent2Select">Agent 2:</label>
-                    <select id="agent2Select"></select>
-                </div>
-                <button type="button" class="btn btn-secondary" id="addAstreinte" style="margin-top:1rem;">Ajouter</button>
-            </div>
-            <!-- Tableau récapitulatif des astreintes à enregistrer -->
-            <table id="astreinteTable" style="width:100%;margin-top:1.5rem;display:none;">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Agent 1</th>
-                        <th>Agent 2</th>
-                        <th>Supprimer</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-secondary" id="cancelAstreinte">Annuler</button>
-            <button class="btn btn-primary" id="saveAstreinte">Enregistrer</button>
-        </div>
-    </div>
-</div>
-
-<!-- Ajout du modal de mot de passe -->
-<div class="modal" id="passwordModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3>Authentification requise</h3>
-            <button class="close-modal" aria-label="Fermer">×</button>
-        </div>
-        <div class="modal-body">
-            <div class="password-form">
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" class="password-input">
-                <div class="error-message" style="color: var(--accent); margin-top: 0.5rem; display: none;">
-                    Mot de passe incorrect
+                    <div class="inspector-dropdown">
+                        <div class="inspector-btn"
+                            onclick="window.open('http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php', '_blank')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>Inspecteur de variable
+                        </div>
+                        <div class="inspector-content" style="display:none;"></div>
+                    </div>
                 </div>
             </div>
+        </header>
+
+        <div class="astreinte-banner">
+            <div class="astreinte-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: middle; margin-right: 8px;">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+                <span>Astreintes du vendredi <span id="friday-date"></span>:</span>
+                <div class="astreinte-agents">
+                    <span class="agent" id="agent1">Agent 1</span>
+                    <span class="agent" id="agent2">Agent 2</span>
+                </div>
+                <button class="config-btn" id="configAstreinte" aria-label="Configurer les astreintes">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button class="btn btn-secondary" id="cancelPassword">Annuler</button>
-            <button class="btn btn-primary" id="submitPassword">Valider</button>
+
+        <main id="main-content" role="main">
+            <div class="content">
+                <div class="card">
+                    <h2 style="white-space:nowrap;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;opacity:0.85;min-width:18px;">
+    <path d="M22 16.92v2a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18a2 2 0 0 1 2-2h2a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/>
+  </svg>
+  <span>Numéros Utiles</span>
+</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-name">Accueil Quadient</span>
+                            <span class="contact-number">0 892 892 111</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Neotouch & Neobox</span>
+                            <span class="contact-number no-wrap">01 41 06 74 00</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Neotouch Prio</span>
+                            <span class="contact-number">01 56 38 36 80</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Neotouch Syndic</span>
+                            <span class="contact-number">01 55 69 62 73</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Neotouch Presta</span>
+                            <span class="contact-number">01 73 09 40 93</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Support Esker</span>
+                            <span class="contact-number">04 26 99 07 60</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Impress Distribute</span>
+                            <span class="contact-number">01 55 69 65 00</span>
+                        </li>
+                        <li>
+                            <span class="contact-name">Impress Automate</span>
+                            <span class="contact-number">03 28 76 70 00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 style="white-space:nowrap;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;opacity:0.85;">
+    <path d="M3 7a2 2 0 0 1 2-2h3.17a2 2 0 0 1 1.41.59l1.83 1.83A2 2 0 0 0 13.83 8H19a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+    <path d="M3 7V5a2 2 0 0 1 2-2h3.17a2 2 0 0 1 1.41.59l1.83 1.83"/>
+  </svg>
+  <span>Ressources Importantes</span>
+</h2>
+                    <ul class="links-list">
+                        <li>
+                            <a href="https://frouk91.github.io/Neotouch/" target="_blank">Template Escalade</a>
+                        </li>
+                        <li>
+                            <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FNouvelle%20Codification%20Digitale%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024"
+                                target="_blank">Codification des requêtes</a>
+                        </li>
+                        <li>
+                            <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024%2FScript%20d%27appels%20%200624%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FProcess%202024"
+                                target="_blank">Script d'appels</a>
+                        </li>
+                        <li>
+                            <a href="https://neopostgroup.sharepoint.com/teams/EUR_FRANeopostServices/Shared%20Documents/Forms/AllItems.aspx?web=1&amp;FolderCTID=0x0120006DC46694A0FCFD4A9458CFC8279B7DC0&amp;id=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements%2FTache%20pour%20Software%2Epdf&amp;viewid=0f83a175-7a5a-4608-87fe-6063c068e53d&amp;parent=%2Fteams%2FEUR_FRANeopostServices%2FShared%20Documents%2F03%20-%20Centre%20de%20Services%20Excellence%2F03%20-%20EQUIPES%20CSE%2FD%C3%A9pt%2E%20CSS%20Digital%2FAccompagnements"
+                                target="_blank">Tache pour Software</a>
+                        </li>
+                        <li>
+                            <a href="https://neopostgroup.sharepoint.com/:b:/r/teams/EUR_FRANeopostServices/Shared%20Documents/03%20-%20Centre%20de%20Services%20Excellence/03%20-%20EQUIPES%20CSE/D%C3%A9pt.%20CSS%20Digital/Accompagnements/Book%20Tarifs%20Neotouch%20F%C3%A9vrier%202025_V2.pdf?csf=1&web=1&e=vlY1jx"
+                                target="_blank">Book Tarif</a>
+                        </li>
+                        <li><a href="https://www.trustesker.com" target="_blank">État des tours Esker</a>
+                        <li>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScbeBxhMpoR9FET7n_NvgK4Hr1AJZsc3P8x4Se6gjk85U57lA/viewform"
+                                target="_blank">Dépassement horaire</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 style="white-space:nowrap;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#7df9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;opacity:0.85;">
+    <circle cx="11" cy="8" r="4"/>
+    <path d="M3 20c0-3.5 3.5-6 8-6s8 2.5 8 6"/>
+  </svg>
+  <span>Liste des Agents Expert</span>
+</h2>
+                    <ul class="agents-list">
+                        <li>
+                            <span class="agent-email">Quadient agentexpert01</span>
+                            <span class="agent-name">Omer</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert02</span>
+                            <span class="agent-name">Philippe</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert03</span>
+                            <span class="agent-name">Adel</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert04</span>
+                            <span class="agent-name">Julien</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert05</span>
+                            <span class="agent-name">Gaël</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert06</span>
+                            <span class="agent-name">Toufik</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert07</span>
+                            <span class="agent-name">Kevin</span>
+                        </li>
+                        <li>
+                            <span class="agent-email">Quadient agentexpert08</span>
+                            <span class="agent-name">Camil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer role="contentinfo">
+            <p>© 2025 ICA Support Services | Farouk REDOUANE</p>
+        </footer>
+    </div>
+
+    <!-- Modal de configuration des astreintes -->
+    <div class="modal" id="astreinteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h3>Configuration des astreintes</h3>
+                    <p style="margin-top: 0.5rem; color: var(--secondary); font-size: 0.9rem;">Pour le vendredi <span
+                            id="modalFridayDate"></span></p>
+                </div>
+                <button class="close-modal" aria-label="Fermer">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="agent-selection">
+                    <div class="agent-select-group">
+                        <label for="dateSelect">Date :</label>
+                        <input type="date" id="dateSelect" class="date-input"
+                            style="padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-size: 1rem; width: 100%; margin-bottom: 1rem;">
+                    </div>
+                    <div class="agent-select-group">
+                        <label for="agent1Select">Agent 1:</label>
+                        <select id="agent1Select"></select>
+                    </div>
+                    <div class="agent-select-group">
+                        <label for="agent2Select">Agent 2:</label>
+                        <select id="agent2Select"></select>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="addAstreinte"
+                        style="margin-top:1rem;">Ajouter</button>
+                </div>
+                <!-- Tableau récapitulatif des astreintes à enregistrer -->
+                <table id="astreinteTable" style="width:100%;margin-top:1.5rem;display:none;">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Agent 1</th>
+                            <th>Agent 2</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelAstreinte">Annuler</button>
+                <button class="btn btn-primary" id="saveAstreinte">Enregistrer</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Configuration du Gist
-    const GIST_ID = 'c94fd00580a131eb9dcd4758b2b382ee';
+    <!-- Ajout du modal de mot de passe -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Authentification requise</h3>
+                <button class="close-modal" aria-label="Fermer">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="password-form">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" class="password-input">
+                    <div class="error-message" style="color: var(--accent); margin-top: 0.5rem; display: none;">
+                        Mot de passe incorrect
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelPassword">Annuler</button>
+                <button class="btn btn-primary" id="submitPassword">Valider</button>
+            </div>
+        </div>
+    </div>
 
-    // Gestion des menus déroulants
-    const ticketBtn = document.querySelector('.ticket-btn');
-    const inspectorBtn = document.querySelector('.inspector-btn');
-    const ticketContent = document.querySelector('.ticket-content');
-    const inspectorContent = document.querySelector('.inspector-content');
-    let activeDropdown = null;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuration du Gist
+            const GIST_ID = 'c94fd00580a131eb9dcd4758b2b382ee';
 
-    // Fonction pour fermer tous les dropdowns
-    function closeAllDropdowns() {
-        ticketContent.classList.remove('show');
-        inspectorContent.classList.remove('show');
-        activeDropdown = null;
-    }
+            // Gestion des menus déroulants
+            const ticketBtn = document.querySelector('.ticket-btn');
+            const inspectorBtn = document.querySelector('.inspector-btn');
+            const ticketContent = document.querySelector('.ticket-content');
+            const inspectorContent = document.querySelector('.inspector-content');
+            let activeDropdown = null;
 
-    // Gestionnaire pour le bouton "ouvrir un ticket"
-    ticketBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (activeDropdown === ticketContent) {
-            closeAllDropdowns();
-        } else {
-            closeAllDropdowns();
-            ticketContent.classList.add('show');
-            activeDropdown = ticketContent;
-        }
-    });
-
-    // Gestionnaire pour le bouton "inspecteur de variable"
-    inspectorBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (activeDropdown === inspectorContent) {
-            closeAllDropdowns();
-        } else {
-            closeAllDropdowns();
-            inspectorContent.classList.add('show');
-            activeDropdown = inspectorContent;
-        }
-    });
-
-    // Fermer les dropdowns quand on clique ailleurs
-    document.addEventListener('click', function() {
-        closeAllDropdowns();
-    });
-
-    // Empêcher la fermeture quand on clique dans le dropdown
-    ticketContent.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-
-    inspectorContent.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-
-    // Fonction pour lire les données depuis le Gist
-    async function fetchAstreinteData() {
-        try {
-            const response = await fetch(`https://api.github.com/gists/${GIST_ID}`);
-            
-            if (!response.ok) {
-                throw new Error(`Erreur HTTP: ${response.status}`);
+            // Fonction pour fermer tous les dropdowns
+            function closeAllDropdowns() {
+                ticketContent.classList.remove('show');
+                inspectorContent.classList.remove('show');
+                activeDropdown = null;
             }
 
-            const gistData = await response.json();
-            const content = gistData.files['astreintes.json'].content;
-            const data = JSON.parse(content);
-            
-            // Stocker les données dans une variable globale
-            window.astreinteData = data;
-            
-            // Mettre à jour l'affichage du bandeau pour la date actuelle
-            updateAstreinteDisplay();
-            
-            return data;
-        } catch (error) {
-            console.error('Erreur lors de la récupération des données:', error);
-            window.astreinteData = { astreintes: [] };
-            return { astreintes: [] };
-        }
-    }
+            // Gestionnaire pour le bouton "ouvrir un ticket"
+            ticketBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (activeDropdown === ticketContent) {
+                    closeAllDropdowns();
+                } else {
+                    closeAllDropdowns();
+                    ticketContent.classList.add('show');
+                    activeDropdown = ticketContent;
+                }
+            });
 
-    // Fonction pour mettre à jour l'affichage du bandeau
-    function updateAstreinteDisplay() {
-        const now = new Date();
-        const currentDay = now.getDay();
-        const daysUntilFriday = (5 - currentDay + 7) % 7;
-        const friday = new Date(now);
-        friday.setDate(now.getDate() + daysUntilFriday);
-        const fridayStr = friday.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+            // Gestionnaire pour le bouton "inspecteur de variable"
+            inspectorBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (activeDropdown === inspectorContent) {
+                    closeAllDropdowns();
+                } else {
+                    closeAllDropdowns();
+                    inspectorContent.classList.add('show');
+                    activeDropdown = inspectorContent;
+                }
+            });
 
-        // Chercher l'astreinte pour ce vendredi
-        const currentAstreinte = window.astreinteData.astreintes?.find(a => a.date === fridayStr);
+            // Fermer les dropdowns quand on clique ailleurs
+            document.addEventListener('click', function () {
+                closeAllDropdowns();
+            });
 
-        document.getElementById('agent1').textContent = currentAstreinte?.agent1 || 'Agent 1';
-        document.getElementById('agent2').textContent = currentAstreinte?.agent2 || 'Agent 2';
-    }
+            // Empêcher la fermeture quand on clique dans le dropdown
+            ticketContent.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
 
-    // Fonction pour trouver une astreinte par date
-    function findAstreinteByDate(dateStr) {
-        return window.astreinteData.astreintes?.find(a => a.date === dateStr);
-    }
+            inspectorContent.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
 
-    // Gestion du thème
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const root = document.documentElement;
+            // Fonction pour lire les données depuis le Gist
+            async function fetchAstreinteData() {
+                try {
+                    const response = await fetch(`https://api.github.com/gists/${GIST_ID}`);
 
-    // Configuration des modales et des boutons
-    const passwordModal = document.getElementById('passwordModal');
-    const astreinteModal = document.getElementById('astreinteModal');
-    const configAstreinteBtn = document.getElementById('configAstreinte');
-    const submitPasswordBtn = document.getElementById('submitPassword');
-    const cancelPasswordBtn = document.getElementById('cancelPassword');
-    const passwordInput = document.getElementById('password');
-    const errorMessage = document.querySelector('.error-message');
-    const closePasswordBtn = passwordModal.querySelector('.close-modal');
-    const closeAstreinteBtn = astreinteModal.querySelector('.close-modal');
-    const cancelAstreinteBtn = document.getElementById('cancelAstreinte');
-    const saveAstreinteBtn = document.getElementById('saveAstreinte');
-    const agent1Select = document.getElementById('agent1Select');
-    const agent2Select = document.getElementById('agent2Select');
+                    if (!response.ok) {
+                        throw new Error(`Erreur HTTP: ${response.status}`);
+                    }
 
-    const CORRECT_PASSWORD = 'Gilard91!';
+                    const gistData = await response.json();
+                    const content = gistData.files['astreintes.json'].content;
+                    const data = JSON.parse(content);
 
-    // Fonctions pour le thème
-    function setTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        updateThemeToggle(theme === 'dark');
-    }
+                    // Stocker les données dans une variable globale
+                    window.astreinteData = data;
 
-    function updateThemeToggle(isDark) {
-        themeToggle.setAttribute('aria-checked', isDark);
-        themeToggle.querySelector('.theme-toggle-text').textContent = isDark ? 'Passer au thème clair' : 'Passer au thème sombre';
-    }
+                    // Mettre à jour l'affichage du bandeau pour la date actuelle
+                    updateAstreinteDisplay();
 
-    // Fonctions pour les modales
-    function showPasswordModal() {
-        passwordModal.classList.add('active');
-        passwordInput.value = '';
-        errorMessage.style.display = 'none';
-        passwordInput.focus();
-    }
-
-    function hidePasswordModal() {
-        passwordModal.classList.remove('active');
-        passwordInput.value = '';
-        errorMessage.style.display = 'none';
-    }
-
-    function showAstreinteModal() {
-        astreinteModal.classList.add('active');
-        const dateSelect = document.getElementById('dateSelect');
-        
-        // Initialiser la date au prochain vendredi
-        const now = new Date();
-        const currentDay = now.getDay();
-        const daysUntilFriday = (5 - currentDay + 7) % 7;
-        const friday = new Date(now);
-        friday.setDate(now.getDate() + daysUntilFriday);
-        dateSelect.value = friday.toISOString().split('T')[0];
-        
-        populateSelects();
-        updateSelectedAgents();
-    }
-
-    function hideAstreinteModal() {
-        astreinteModal.classList.remove('active');
-    }
-
-    // Gestionnaires d'événements pour le thème
-    const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    setTheme(currentTheme);
-
-    themeToggle.addEventListener('click', function() {
-        const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
-
-    // Gestionnaires d'événements pour le mot de passe
-    configAstreinteBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        showPasswordModal();
-    });
-
-    submitPasswordBtn.addEventListener('click', function() {
-        if (passwordInput.value === CORRECT_PASSWORD) {
-            hidePasswordModal();
-            showAstreinteModal();
-        } else {
-            errorMessage.style.display = 'block';
-            passwordInput.value = '';
-            passwordInput.focus();
-            errorMessage.style.animation = 'none';
-            errorMessage.offsetHeight;
-            errorMessage.style.animation = 'shake 0.5s ease-in-out';
-        }
-    });
-
-    passwordInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            submitPasswordBtn.click();
-        }
-    });
-
-    // Gestionnaires pour fermer les modales
-    [cancelPasswordBtn, closePasswordBtn].forEach(btn => {
-        if (btn) btn.addEventListener('click', hidePasswordModal);
-    });
-
-    [closeAstreinteBtn, cancelAstreinteBtn].forEach(btn => {
-        if (btn) btn.addEventListener('click', hideAstreinteModal);
-    });
-
-    passwordModal.addEventListener('click', function(e) {
-        if (e.target === passwordModal) hidePasswordModal();
-    });
-
-    astreinteModal.addEventListener('click', function(e) {
-        if (e.target === astreinteModal) hideAstreinteModal();
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            if (passwordModal.classList.contains('active')) hidePasswordModal();
-            if (astreinteModal.classList.contains('active')) hideAstreinteModal();
-        }
-    });
-
-    // Gestion des préférences système
-    let timeoutId;
-    prefersDarkScheme.addEventListener('change', function(e) {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            if (!localStorage.getItem('theme')) {
-                setTheme(e.matches ? 'dark' : 'light');
-            }
-        }, 100);
-    });
-
-    // Fonction pour obtenir la date du vendredi
-    function getCurrentFridayDate() {
-        const now = new Date();
-        const currentDay = now.getDay();
-        const daysUntilFriday = (5 - currentDay + 7) % 7;
-        const friday = new Date(now);
-        friday.setDate(now.getDate() + daysUntilFriday);
-        
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        return friday.toLocaleDateString('fr-FR', options);
-    }
-
-    // Mise à jour de la date dans le bandeau et dans le modal
-    const fridayDateElement = document.getElementById('friday-date');
-    const modalFridayDateElement = document.getElementById('modalFridayDate');
-    const fridayDate = getCurrentFridayDate();
-    
-    if (fridayDateElement) {
-        fridayDateElement.textContent = fridayDate;
-    }
-    if (modalFridayDateElement) {
-        modalFridayDateElement.textContent = fridayDate;
-    }
-
-    // Fonction pour peupler les sélecteurs d'agents
-    function populateSelects() {
-        const agents = Array.from(document.querySelectorAll('.agents-list .agent-name')).map(el => el.textContent);
-        const options = agents.map(agent => `<option value="${agent}">${agent}</option>`).join('');
-        
-        if (agent1Select && agent2Select) {
-            agent1Select.innerHTML = '<option value="">Sélectionner un agent</option>' + options;
-            agent2Select.innerHTML = '<option value="">Sélectionner un agent</option>' + options;
-        }
-    }
-
-    // Fonction pour mettre à jour les agents sélectionnés
-    function updateSelectedAgents() {
-        const dateSelect = document.getElementById('dateSelect');
-        const selectedDate = new Date(dateSelect.value);
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
-        
-        const astreinte = findAstreinteByDate(formattedDate);
-        
-        if (astreinte) {
-            agent1Select.value = astreinte.agent1 || '';
-            agent2Select.value = astreinte.agent2 || '';
-        } else {
-            agent1Select.value = '';
-            agent2Select.value = '';
-        }
-    }
-
-    // Ajouter un écouteur d'événements pour le changement de date
-    document.getElementById('dateSelect').addEventListener('change', updateSelectedAgents);
-
-    // Gestion de la sauvegarde des astreintes
-    if (saveAstreinteBtn) {
-        saveAstreinteBtn.addEventListener('click', function() {
-            const agent1 = agent1Select.value;
-            const agent2 = agent2Select.value;
-            const selectedDate = new Date(document.getElementById('dateSelect').value);
-            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
-
-            if (!agent1 || !agent2) {
-                alert('Veuillez sélectionner deux agents différents');
-                return;
+                    return data;
+                } catch (error) {
+                    console.error('Erreur lors de la récupération des données:', error);
+                    window.astreinteData = { astreintes: [] };
+                    return { astreintes: [] };
+                }
             }
 
-            if (agent1 === agent2) {
-                alert('Veuillez sélectionner deux agents différents');
-                return;
+            // Fonction pour mettre à jour l'affichage du bandeau
+            function updateAstreinteDisplay() {
+                const now = new Date();
+                const currentDay = now.getDay();
+                const daysUntilFriday = (5 - currentDay + 7) % 7;
+                const friday = new Date(now);
+                friday.setDate(now.getDate() + daysUntilFriday);
+                const fridayStr = friday.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                // Chercher l'astreinte pour ce vendredi
+                const currentAstreinte = window.astreinteData.astreintes?.find(a => a.date === fridayStr);
+
+                document.getElementById('agent1').textContent = currentAstreinte?.agent1 || 'Agent 1';
+                document.getElementById('agent2').textContent = currentAstreinte?.agent2 || 'Agent 2';
             }
 
-            // Préparer les nouvelles données
-            if (!window.astreinteData.astreintes) {
-                window.astreinteData.astreintes = [];
+            // Fonction pour trouver une astreinte par date
+            function findAstreinteByDate(dateStr) {
+                return window.astreinteData.astreintes?.find(a => a.date === dateStr);
             }
 
-            // Mettre à jour ou ajouter l'astreinte
-            const existingIndex = window.astreinteData.astreintes.findIndex(a => a.date === formattedDate);
-            const newAstreinte = {
-                date: formattedDate,
-                agent1: agent1,
-                agent2: agent2
-            };
+            // Gestion du thème
+            const themeToggle = document.querySelector('.theme-toggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            const root = document.documentElement;
 
-            if (existingIndex >= 0) {
-                window.astreinteData.astreintes[existingIndex] = newAstreinte;
-            } else {
-                window.astreinteData.astreintes.push(newAstreinte);
+            // Configuration des modales et des boutons
+            const passwordModal = document.getElementById('passwordModal');
+            const astreinteModal = document.getElementById('astreinteModal');
+            const configAstreinteBtn = document.getElementById('configAstreinte');
+            const submitPasswordBtn = document.getElementById('submitPassword');
+            const cancelPasswordBtn = document.getElementById('cancelPassword');
+            const passwordInput = document.getElementById('password');
+            const errorMessage = document.querySelector('.error-message');
+            const closePasswordBtn = passwordModal.querySelector('.close-modal');
+            const closeAstreinteBtn = astreinteModal.querySelector('.close-modal');
+            const cancelAstreinteBtn = document.getElementById('cancelAstreinte');
+            const saveAstreinteBtn = document.getElementById('saveAstreinte');
+            const agent1Select = document.getElementById('agent1Select');
+            const agent2Select = document.getElementById('agent2Select');
+
+            const CORRECT_PASSWORD = 'Gilard91!';
+
+            // Fonctions pour le thème
+            function setTheme(theme) {
+                root.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeToggle(theme === 'dark');
             }
 
-            window.astreinteData.lastUpdate = new Date().toISOString();
+            function updateThemeToggle(isDark) {
+                themeToggle.setAttribute('aria-checked', isDark);
+                themeToggle.querySelector('.theme-toggle-text').textContent = isDark ? 'Passer au thème clair' : 'Passer au thème sombre';
+            }
 
-            const jsonContent = JSON.stringify(window.astreinteData, null, 2);
+            // Fonctions pour les modales
+            function showPasswordModal() {
+                passwordModal.classList.add('active');
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+                passwordInput.focus();
+            }
 
-            const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
-            navigator.clipboard.writeText(jsonContent)
-              .then(() => {
-                window.open(gistUrl, '_blank');
-                alert(`Pour mettre à jour les astreintes :
+            function hidePasswordModal() {
+                passwordModal.classList.remove('active');
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+            }
+
+            function showAstreinteModal() {
+                astreinteModal.classList.add('active');
+                const dateSelect = document.getElementById('dateSelect');
+
+                // Initialiser la date au prochain vendredi
+                const now = new Date();
+                const currentDay = now.getDay();
+                const daysUntilFriday = (5 - currentDay + 7) % 7;
+                const friday = new Date(now);
+                friday.setDate(now.getDate() + daysUntilFriday);
+                dateSelect.value = friday.toISOString().split('T')[0];
+
+                populateSelects();
+                updateSelectedAgents();
+            }
+
+            function hideAstreinteModal() {
+                astreinteModal.classList.remove('active');
+            }
+
+            // Gestionnaires d'événements pour le thème
+            const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+            setTheme(currentTheme);
+
+            themeToggle.addEventListener('click', function () {
+                const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            // Gestionnaires d'événements pour le mot de passe
+            configAstreinteBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                showPasswordModal();
+            });
+
+            submitPasswordBtn.addEventListener('click', function () {
+                if (passwordInput.value === CORRECT_PASSWORD) {
+                    hidePasswordModal();
+                    showAstreinteModal();
+                } else {
+                    errorMessage.style.display = 'block';
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                    errorMessage.style.animation = 'none';
+                    errorMessage.offsetHeight;
+                    errorMessage.style.animation = 'shake 0.5s ease-in-out';
+                }
+            });
+
+            passwordInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    submitPasswordBtn.click();
+                }
+            });
+
+            // Gestionnaires pour fermer les modales
+            [cancelPasswordBtn, closePasswordBtn].forEach(btn => {
+                if (btn) btn.addEventListener('click', hidePasswordModal);
+            });
+
+            [closeAstreinteBtn, cancelAstreinteBtn].forEach(btn => {
+                if (btn) btn.addEventListener('click', hideAstreinteModal);
+            });
+
+            passwordModal.addEventListener('click', function (e) {
+                if (e.target === passwordModal) hidePasswordModal();
+            });
+
+            astreinteModal.addEventListener('click', function (e) {
+                if (e.target === astreinteModal) hideAstreinteModal();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    if (passwordModal.classList.contains('active')) hidePasswordModal();
+                    if (astreinteModal.classList.contains('active')) hideAstreinteModal();
+                }
+            });
+
+            // Gestion des préférences système
+            let timeoutId;
+            prefersDarkScheme.addEventListener('change', function (e) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    if (!localStorage.getItem('theme')) {
+                        setTheme(e.matches ? 'dark' : 'light');
+                    }
+                }, 100);
+            });
+
+            // Fonction pour obtenir la date du vendredi
+            function getCurrentFridayDate() {
+                const now = new Date();
+                const currentDay = now.getDay();
+                const daysUntilFriday = (5 - currentDay + 7) % 7;
+                const friday = new Date(now);
+                friday.setDate(now.getDate() + daysUntilFriday);
+
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                return friday.toLocaleDateString('fr-FR', options);
+            }
+
+            // Mise à jour de la date dans le bandeau et dans le modal
+            const fridayDateElement = document.getElementById('friday-date');
+            const modalFridayDateElement = document.getElementById('modalFridayDate');
+            const fridayDate = getCurrentFridayDate();
+
+            if (fridayDateElement) {
+                fridayDateElement.textContent = fridayDate;
+            }
+            if (modalFridayDateElement) {
+                modalFridayDateElement.textContent = fridayDate;
+            }
+
+            // Fonction pour peupler les sélecteurs d'agents
+            function populateSelects() {
+                const agents = Array.from(document.querySelectorAll('.agents-list .agent-name')).map(el => el.textContent);
+                const options = agents.map(agent => `<option value="${agent}">${agent}</option>`).join('');
+
+                if (agent1Select && agent2Select) {
+                    agent1Select.innerHTML = '<option value="">Sélectionner un agent</option>' + options;
+                    agent2Select.innerHTML = '<option value="">Sélectionner un agent</option>' + options;
+                }
+            }
+
+            // Fonction pour mettre à jour les agents sélectionnés
+            function updateSelectedAgents() {
+                const dateSelect = document.getElementById('dateSelect');
+                const selectedDate = new Date(dateSelect.value);
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
+
+                const astreinte = findAstreinteByDate(formattedDate);
+
+                if (astreinte) {
+                    agent1Select.value = astreinte.agent1 || '';
+                    agent2Select.value = astreinte.agent2 || '';
+                } else {
+                    agent1Select.value = '';
+                    agent2Select.value = '';
+                }
+            }
+
+            // Ajouter un écouteur d'événements pour le changement de date
+            document.getElementById('dateSelect').addEventListener('change', updateSelectedAgents);
+
+            // Gestion de la sauvegarde des astreintes
+            if (saveAstreinteBtn) {
+                saveAstreinteBtn.addEventListener('click', function () {
+                    const agent1 = agent1Select.value;
+                    const agent2 = agent2Select.value;
+                    const selectedDate = new Date(document.getElementById('dateSelect').value);
+                    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                    const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
+
+                    if (!agent1 || !agent2) {
+                        alert('Veuillez sélectionner deux agents différents');
+                        return;
+                    }
+
+                    if (agent1 === agent2) {
+                        alert('Veuillez sélectionner deux agents différents');
+                        return;
+                    }
+
+                    // Préparer les nouvelles données
+                    if (!window.astreinteData.astreintes) {
+                        window.astreinteData.astreintes = [];
+                    }
+
+                    // Mettre à jour ou ajouter l'astreinte
+                    const existingIndex = window.astreinteData.astreintes.findIndex(a => a.date === formattedDate);
+                    const newAstreinte = {
+                        date: formattedDate,
+                        agent1: agent1,
+                        agent2: agent2
+                    };
+
+                    if (existingIndex >= 0) {
+                        window.astreinteData.astreintes[existingIndex] = newAstreinte;
+                    } else {
+                        window.astreinteData.astreints.push(newAstreinte);
+                    }
+
+                    window.astreinteData.lastUpdate = new Date().toISOString();
+
+                    const jsonContent = JSON.stringify(window.astreinteData, null, 2);
+
+                    const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
+                    navigator.clipboard.writeText(jsonContent)
+                        .then(() => {
+                            window.open(gistUrl, '_blank');
+                            alert(`Pour mettre à jour les astreintes :
 
 1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :
 
@@ -2418,11 +2847,11 @@ ${jsonContent}
 
 2. Cliquez sur "Update gist"
 3. Revenez sur cette page et actualisez pour voir les changements`);
-              })
-              .catch(() => {
-                alert("Impossible de copier automatiquement dans le presse-papiers. Merci de copier manuellement le texte affiché.");
-                window.open(gistUrl, '_blank');
-                alert(`Pour mettre à jour les astreintes :
+                        })
+                        .catch(() => {
+                            alert("Impossible de copier automatiquement dans le presse-papiers. Merci de copier manuellement le texte affiché.");
+                            window.open(gistUrl, '_blank');
+                            alert(`Pour mettre à jour les astreintes :
 
 1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :
 
@@ -2430,104 +2859,179 @@ ${jsonContent}
 
 2. Cliquez sur "Update gist"
 3. Revenez sur cette page et actualisez pour voir les changements`);
-              });
-            hideAstreinteModal();
-        });
-    }
+                        });
+                    hideAstreinteModal();
+                });
+            }
 
-    // Charger les données au démarrage
-    fetchAstreinteData();
+            // Charger les données au démarrage
+            fetchAstreinteData();
 
-    // Rafraîchir les données toutes les 5 minutes
-    setInterval(fetchAstreinteData, 5 * 60 * 1000);
+            // Rafraîchir les données toutes les 5 minutes
+            setInterval(fetchAstreinteData, 5 * 60 * 1000);
 
-    // Liste temporaire des astreintes à enregistrer
-    let astreinteList = [];
-    // Bouton Ajouter
-    const addAstreinteBtn = document.getElementById('addAstreinte');
-    const astreinteTable = document.getElementById('astreinteTable');
-    const astreinteTableBody = astreinteTable.querySelector('tbody');
+            // Liste temporaire des astreintes à enregistrer
+            let astreinteList = [];
+            // Bouton Ajouter
+            const addAstreinteBtn = document.getElementById('addAstreinte');
+            const astreinteTable = document.getElementById('astreinteTable');
+            const astreinteTableBody = astreinteTable.querySelector('tbody');
 
-    addAstreinteBtn.addEventListener('click', function() {
-        const dateInput = document.getElementById('dateSelect');
-        const agent1 = agent1Select.value;
-        const agent2 = agent2Select.value;
-        const selectedDate = new Date(dateInput.value);
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
+            addAstreinteBtn.addEventListener('click', function () {
+                const dateInput = document.getElementById('dateSelect');
+                const agent1 = agent1Select.value;
+                const agent2 = agent2Select.value;
+                const selectedDate = new Date(dateInput.value);
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                const formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
 
-        if (!agent1 || !agent2 || agent1 === agent2) {
-            alert('Veuillez sélectionner deux agents différents');
-            return;
-        }
-        if (astreinteList.some(a => a.date === formattedDate)) {
-            alert('Cette date est déjà dans la liste.');
-            return;
-        }
-        astreinteList.push({ date: formattedDate, agent1, agent2 });
-        updateAstreinteTable();
-        agent1Select.value = '';
-        agent2Select.value = '';
-    });
+                if (!agent1 || !agent2 || agent1 === agent2) {
+                    alert('Veuillez sélectionner deux agents différents');
+                    return;
+                }
+                if (astreinteList.some(a => a.date === formattedDate)) {
+                    alert('Cette date est déjà dans la liste.');
+                    return;
+                }
+                astreinteList.push({ date: formattedDate, agent1, agent2 });
+                updateAstreinteTable();
+                agent1Select.value = '';
+                agent2Select.value = '';
+            });
 
-    function updateAstreinteTable() {
-        astreinteTableBody.innerHTML = '';
-        if (astreinteList.length === 0) {
-            astreinteTable.style.display = 'none';
-            return;
-        }
-        astreinteTable.style.display = '';
-        astreinteList.forEach((a, idx) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
+            function updateAstreinteTable() {
+                astreinteTableBody.innerHTML = '';
+                if (astreinteList.length === 0) {
+                    astreinteTable.style.display = 'none';
+                    return;
+                }
+                astreinteTable.style.display = '';
+                astreinteList.forEach((a, idx) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
                 <td>${a.date}</td>
                 <td>${a.agent1}</td>
                 <td>${a.agent2}</td>
                 <td><button type="button" onclick="removeAstreinte(${idx})" style="color:#ef4444;font-weight:bold;">×</button></td>
             `;
-            astreinteTableBody.appendChild(row);
+                    astreinteTableBody.appendChild(row);
+                });
+            }
+
+            // Fonction globale pour suppression
+            window.removeAstreinte = function (idx) {
+                astreinteList.splice(idx, 1);
+                updateAstreinteTable();
+            };
+
+            // Adapter le bouton Enregistrer
+            saveAstreinteBtn.addEventListener('click', function () {
+                if (astreinteList.length === 0) {
+                    alert('Ajoutez au moins une astreinte à la liste.');
+                    return;
+                }
+                // Ajout groupé dans window.astreinteData.astreintes
+                astreinteList.forEach(newAstreinte => {
+                    const existingIndex = window.astreinteData.astreints.findIndex(a => a.date === newAstreinte.date);
+                    if (existingIndex >= 0) {
+                        window.astreinteData.astreints[existingIndex] = newAstreinte;
+                    } else {
+                        window.astreinteData.astreints.push(newAstreinte);
+                    }
+                });
+                window.astreinteData.lastUpdate = new Date().toISOString();
+                const jsonContent = JSON.stringify(window.astreinteData, null, 2);
+                const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
+                navigator.clipboard.writeText(jsonContent)
+                    .then(() => {
+                        window.open(gistUrl, '_blank');
+                        alert(`Pour mettre à jour les astreintes :\n\n1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :\n\n${jsonContent}\n\n2. Cliquez sur "Update gist"\n3. Revenez sur cette page et actualisez pour voir les changements`);
+                    })
+                    .catch(() => {
+                        alert("Impossible de copier automatiquement dans le presse-papiers. Merci de copier manuellement le texte affiché.");
+                        window.open(gistUrl, '_blank');
+                        alert(`Pour mettre à jour les astreintes :\n\n1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :\n\n${jsonContent}\n\n2. Cliquez sur "Update gist"\n3. Revenez sur cette page et actualisez pour voir les changements`);
+                    });
+                astreinteList = [];
+                updateAstreinteTable();
+                hideAstreinteModal();
+            });
         });
+    </script>
+	<script>
+    // Affiche le preloader au chargement, mais seulement une fois par jour
+    const preloaderKey = 'preloaderLastShown';
+    const today = new Date().toISOString().slice(0, 10); // format YYYY-MM-DD
+
+    function hidePreloader() {
+        document.body.classList.remove('preloader-active');
+        var preloader = document.getElementById('preloader');
+        if (preloader) preloader.style.display = 'none';
     }
 
-    // Fonction globale pour suppression
-    window.removeAstreinte = function(idx) {
-        astreinteList.splice(idx, 1);
-        updateAstreinteTable();
-    };
-
-    // Adapter le bouton Enregistrer
-    saveAstreinteBtn.addEventListener('click', function() {
-        if (astreinteList.length === 0) {
-            alert('Ajoutez au moins une astreinte à la liste.');
-            return;
-        }
-        // Ajout groupé dans window.astreinteData.astreintes
-        astreinteList.forEach(newAstreinte => {
-            const existingIndex = window.astreinteData.astreintes.findIndex(a => a.date === newAstreinte.date);
-            if (existingIndex >= 0) {
-                window.astreinteData.astreintes[existingIndex] = newAstreinte;
-            } else {
-                window.astreinteData.astreintes.push(newAstreinte);
-            }
+    if (localStorage.getItem(preloaderKey) !== today) {
+        // Affiche le preloader et enregistre la date du jour
+        document.body.classList.add('preloader-active');
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                hidePreloader();
+                localStorage.setItem(preloaderKey, today);
+            }, 4000);
         });
-        window.astreinteData.lastUpdate = new Date().toISOString();
-        const jsonContent = JSON.stringify(window.astreinteData, null, 2);
-        const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
-        navigator.clipboard.writeText(jsonContent)
-          .then(() => {
-            window.open(gistUrl, '_blank');
-            alert(`Pour mettre à jour les astreintes :\n\n1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :\n\n${jsonContent}\n\n2. Cliquez sur \"Update gist\"\n3. Revenez sur cette page et actualisez pour voir les changements`);
-          })
-          .catch(() => {
-            alert("Impossible de copier automatiquement dans le presse-papiers. Merci de copier manuellement le texte affiché.");
-            window.open(gistUrl, '_blank');
-            alert(`Pour mettre à jour les astreintes :\n\n1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :\n\n${jsonContent}\n\n2. Cliquez sur \"Update gist\"\n3. Revenez sur cette page et actualisez pour voir les changements`);
-          });
-        astreinteList = [];
-        updateAstreinteTable();
-        hideAstreinteModal();
-    });
-});
+    } else {
+        // Cache immédiatement le preloader si déjà vu aujourd'hui
+        hidePreloader();
+    }
 </script>
-</body>
+<style>
+[data-theme="dark"] .header-tools .planning-link {
+    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%) !important;
+    color: #fecaca !important;
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+[data-theme="dark"] .header-tools .planning-link:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
+    color: #fff !important;
+    border-color: #f87171 !important;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
+}
+[data-theme="dark"] .header-tools .adp-link {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
+    border: 1px solid #10b981 !important;
+    color: #a7f3d0 !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+[data-theme="dark"] .header-tools .adp-link:hover {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+    border-color: #34d399 !important;
+    color: #fff !important;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+}
+[data-theme="dark"] .header-tools .ticket-btn {
+    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%) !important;
+    color: #fecaca !important;
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+[data-theme="dark"] .header-tools .ticket-btn:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
+    color: #fff !important;
+    border-color: #f87171 !important;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
+}
+[data-theme="dark"] .header-tools .inspector-btn {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
+    border: 1px solid #10b981 !important;
+    color: #a7f3d0 !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+[data-theme="dark"] .header-tools .inspector-btn:hover {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+    border-color: #34d399 !important;
+    color: #fff !important;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+}
+</style>
+   </body>
 </html>

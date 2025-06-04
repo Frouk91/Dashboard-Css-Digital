@@ -897,13 +897,17 @@
 
         [data-theme="dark"] .ticket-btn,
         [data-theme="dark"] .inspector-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background-color: #0f172a !important;
+            color: #7df9ff !important;
+            border: 1.5px solid #7df9ff !important;
+            box-shadow: 0 4px 10px rgba(125, 249, 255, 0.2) !important;
         }
 
         [data-theme="dark"] .ticket-btn:hover,
         [data-theme="dark"] .inspector-btn:hover {
-            background: var(--hover-bg);
+            background-color: #1e293b !important;
+            color: #7df9ff !important;
+            box-shadow: 0 6px 16px rgba(125, 249, 255, 0.4) !important;
         }
 
         [data-theme="dark"] footer {
@@ -945,31 +949,7 @@
             transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] .ticket-btn {
-            background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%);
-            border: 1px solid #ef4444;
-            color: #fecaca;
-        }
-
-        [data-theme="dark"] .ticket-btn:hover {
-            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
-            border-color: #f87171;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-        }
-
-        [data-theme="dark"] .inspector-btn {
-            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
-            border: 1px solid #10b981;
-            color: #a7f3d0;
-        }
-
-        [data-theme="dark"] .inspector-btn:hover {
-            background: linear-gradient(135deg, #047857 0%, #059669 100%);
-            border-color: #34d399;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
+        
 
         /* Mise à jour des menus déroulants pour correspondre à leurs boutons */
         [data-theme="dark"] .ticket-content {
@@ -2124,15 +2104,6 @@ body:not(.preloader-active) footer {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(125, 249, 255, 0.15);
 }
-.planning-link:hover,
-.adp-link:hover,
-.ticket-btn:hover,
-.inspector-btn:hover {
-    background-color: #1f2937 !important;
-    color: #7df9ff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(125, 249, 255, 0.3);
-}
 [data-theme="dark"] .planning-link,
 [data-theme="dark"] .adp-link,
 [data-theme="dark"] .ticket-btn,
@@ -2140,16 +2111,7 @@ body:not(.preloader-active) footer {
     background-color: #0f172a !important;
     color: #7df9ff !important;
     border: 1.5px solid #7df9ff !important;
-    box-shadow: 0 4px 10px rgba(125, 249, 255, 0.2);
-}
-[data-theme="dark"] .planning-link:hover,
-[data-theme="dark"] .adp-link:hover,
-[data-theme="dark"] .ticket-btn:hover,
-[data-theme="dark"] .inspector-btn:hover {
-    background-color: #1e293b !important;
-    color: #7df9ff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(125, 249, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(125, 249, 255, 0.2) !important;
 }
 /* === FIN AJOUT STYLE OPTION 4 === */
 
@@ -2232,35 +2194,41 @@ body:not(.preloader-active) footer {
                         </svg>ADP</a>
 
                     <div class="ticket-dropdown">
-                        <div class="ticket-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+    <a href="#" class="ticket-btn" role="button" aria-haspopup="true" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
                                 <path
                                     d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
                                 </path>
                             </svg>Ouvrir un ticket
-                        </div>
-                        <div class="ticket-content">
-                            <a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F"
-                                target="_blank">Esker</a>
-                            <a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1"
-                                target="_blank">Primobox</a>
-                        </div>
-                    </div>
+    </a>
+    <div class="ticket-content">
+        <a href="https://esker.my.site.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F"
+            target="_blank">Esker</a>
+        <a href="https://primobox.atlassian.net/servicedesk/customer/portal/1/user/login?destination=portal%2F1%2Fcreate%2F1"
+            target="_blank">Primobox</a>
+			
+    </div>
+</div>
 
-                    <div class="inspector-dropdown">
-                        <div class="inspector-btn"
-                            onclick="window.open('http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php', '_blank')">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+<div class="inspector-dropdown">
+    <a href="http://dev.meereen.nsweb.neodom.org/InspecterNeotouch/inspecter_doc.php"
+       class="inspector-btn"
+       role="button"
+       target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>Inspecteur de variable
-                        </div>
-                        <div class="inspector-content" style="display:none;"></div>
-                    </div>
+                            </svg>Inspecteur de variable<!-- icône SVG -->
+        
+    </a>
+    <div class="inspector-content" style="display:none;"></div>
+</div>
+
+                   
                 </div>
             </div>
         </header>
@@ -2493,6 +2461,9 @@ body:not(.preloader-active) footer {
         </div>
     </div>
 
+    <!-- Ajout du fond animé étoilé -->
+<canvas id="aurora-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Configuration du Gist
@@ -2514,6 +2485,7 @@ body:not(.preloader-active) footer {
 
             // Gestionnaire pour le bouton "ouvrir un ticket"
             ticketBtn.addEventListener('click', function (e) {
+                e.preventDefault(); // Ajoute cette ligne
                 e.stopPropagation();
                 if (activeDropdown === ticketContent) {
                     closeAllDropdowns();
@@ -2983,55 +2955,90 @@ ${jsonContent}
         hidePreloader();
     }
 </script>
-<style>
-[data-theme="dark"] .header-tools .planning-link {
-    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%) !important;
-    color: #fecaca !important;
-    border: 1px solid #ef4444 !important;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
-}
-[data-theme="dark"] .header-tools .planning-link:hover {
-    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
-    color: #fff !important;
-    border-color: #f87171 !important;
-    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
-}
-[data-theme="dark"] .header-tools .adp-link {
-    background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
-    border: 1px solid #10b981 !important;
-    color: #a7f3d0 !important;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
-}
-[data-theme="dark"] .header-tools .adp-link:hover {
-    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-    border-color: #34d399 !important;
-    color: #fff !important;
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
-}
-[data-theme="dark"] .header-tools .ticket-btn {
-    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%) !important;
-    color: #fecaca !important;
-    border: 1px solid #ef4444 !important;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
-}
-[data-theme="dark"] .header-tools .ticket-btn:hover {
-    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
-    color: #fff !important;
-    border-color: #f87171 !important;
-    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
-}
-[data-theme="dark"] .header-tools .inspector-btn {
-    background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
-    border: 1px solid #10b981 !important;
-    color: #a7f3d0 !important;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
-}
-[data-theme="dark"] .header-tools .inspector-btn:hover {
-    background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-    border-color: #34d399 !important;
-    color: #fff !important;
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
-}
-</style>
-   </body>
-</html>
+
+<script>
+// filepath: index.html
+(function auroraBackground() {
+    const canvas = document.getElementById('aurora-bg');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function getAuroraColors() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            return [
+                'rgba(125,249,255,0.18)',
+                'rgba(59,130,246,0.13)',
+                'rgba(165,180,252,0.10)',
+                'rgba(16,185,129,0.10)'
+            ];
+        }
+        return [
+            'rgba(59,130,246,0.13)',
+            'rgba(125,249,255,0.18)',
+            'rgba(16,185,129,0.10)',
+            'rgba(165,180,252,0.10)'
+        ];
+    }
+
+    const auroras = [];
+    const AURORA_COUNT = 4;
+    for (let i = 0; i < AURORA_COUNT; i++) {
+        auroras.push({
+            baseY: Math.random() * height * 0.7 + height * 0.15,
+            amplitude: 60 + Math.random() * 80,
+            speed: 0.0007 + Math.random() * 0.0008,
+            offset: Math.random() * 1000,
+            colorIndex: i
+        });
+    }
+
+    function drawAurora() {
+        ctx.clearRect(0, 0, width, height);
+        const colors = getAuroraColors();
+        const now = Date.now();
+
+        for (let i = 0; i < auroras.length; i++) {
+            const a = auroras[i];
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(0, height);
+            for (let x = 0; x <= width; x += 4) {
+                const t = (now * a.speed + a.offset + x * 0.012) % 10000;
+                const y = a.baseY + Math.sin(t + x * 0.008 + i) * a.amplitude * Math.sin(t * 0.7 + i);
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(width, height);
+            ctx.closePath();
+            ctx.fillStyle = colors[a.colorIndex % colors.length];
+            ctx.filter = 'blur(12px)';
+            ctx.fill();
+            ctx.filter = 'none';
+            ctx.restore();
+        }
+    }
+
+    function animate() {
+        drawAurora();
+        requestAnimationFrame(animate);
+    }
+
+    // Redessine si le thème change
+    const observer = new MutationObserver(drawAurora);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    animate();
+    window.addEventListener('resize', resize);
+})();
+</script>

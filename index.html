@@ -2824,31 +2824,8 @@ body:not(.preloader-active) footer {
                     const jsonContent = JSON.stringify(window.astreinteData, null, 2);
 
                     const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
-                    navigator.clipboard.writeText(jsonContent)
-                        .then(() => {
-                            window.open(gistUrl, '_blank');
-                            alert(`Pour mettre à jour les astreintes :
-
-1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :
-
-${jsonContent}
-
-2. Cliquez sur "Update gist"
-3. Revenez sur cette page et actualisez pour voir les changements`);
-                        })
-                        .catch(() => {
-                            alert("Impossible de copier automatiquement dans le presse-papiers. Merci de copier manuellement le texte affiché.");
-                            window.open(gistUrl, '_blank');
-                            alert(`Pour mettre à jour les astreintes :
-
-1. Dans la fenêtre qui vient de s'ouvrir, remplacez tout le contenu par :
-
-${jsonContent}
-
-2. Cliquez sur "Update gist"
-3. Revenez sur cette page et actualisez pour voir les changements`);
-                        });
-                    hideAstreinteModal();
+                    window.open(gistUrl, '_blank');
+                    // Plus d'alert, les instructions sont dans le modal de copie JSON
                 });
             }
 
@@ -2883,8 +2860,9 @@ ${jsonContent}
                 }
                 astreinteList.push({ date: formattedDate, agent1, agent2 });
                 updateAstreinteTable();
-                agent1Select.value = '';
-                agent2Select.value = '';
+                // Ne pas réinitialiser les sélecteurs d'agents ici
+                // agent1Select.value = '';
+                // agent2Select.value = '';
             });
 
             function updateAstreinteTable() {
@@ -2913,12 +2891,12 @@ ${jsonContent}
             };
 
             // Adapter le bouton Enregistrer
-            saveAstreinteBtn.addEventListener('click', function () {
+            saveAstreinteBtn.replaceWith(saveAstreinteBtn.cloneNode(true));
+            const newSaveAstreinteBtn = document.getElementById('saveAstreinte');
+            newSaveAstreinteBtn.addEventListener('click', function () {
                 if (astreinteList.length === 0) {
-                    alert('Ajoutez au moins une astreinte à la liste.');
                     return;
                 }
-                // Ajout groupé dans window.astreinteData.astreintes
                 astreinteList.forEach(newAstreinte => {
                     const existingIndex = window.astreinteData.astreintes.findIndex(a => a.date === newAstreinte.date);
                     if (existingIndex >= 0) {
@@ -2929,7 +2907,6 @@ ${jsonContent}
                 });
                 window.astreinteData.lastUpdate = new Date().toISOString();
                 const jsonContent = JSON.stringify(window.astreinteData, null, 2);
-                // Afficher le modal de copie JSON
                 const jsonCopyModal = document.getElementById('jsonCopyModal');
                 const jsonAstreinteTextarea = document.getElementById('jsonAstreinteTextarea');
                 const copyJsonBtn = document.getElementById('copyJsonBtn');
@@ -2939,13 +2916,40 @@ ${jsonContent}
                 copySuccessMsg.style.display = 'none';
                 copyJsonBtn.onclick = function() {
                     jsonAstreinteTextarea.select();
-                    document.execCommand('copy');
-                    copySuccessMsg.style.display = 'inline';
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(jsonAstreinteTextarea.value)
+                            .then(() => {
+                                copySuccessMsg.style.display = 'inline';
+                                copySuccessMsg.textContent = 'Copié !';
+                                copySuccessMsg.style.color = 'var(--tertiary)';
+                            })
+                            .catch(() => {
+                                copySuccessMsg.style.display = 'inline';
+                                copySuccessMsg.textContent = "Impossible de copier automatiquement. Merci de copier manuellement le texte ci-dessous.";
+                                copySuccessMsg.style.color = 'var(--accent)';
+                            });
+                    } else {
+                        try {
+                            if (document.execCommand('copy')) {
+                                copySuccessMsg.style.display = 'inline';
+                                copySuccessMsg.textContent = 'Copié !';
+                                copySuccessMsg.style.color = 'var(--tertiary)';
+                            } else {
+                                copySuccessMsg.style.display = 'inline';
+                                copySuccessMsg.textContent = "Impossible de copier automatiquement. Merci de copier manuellement le texte ci-dessous.";
+                                copySuccessMsg.style.color = 'var(--accent)';
+                            }
+                        } catch (e) {
+                            copySuccessMsg.style.display = 'inline';
+                            copySuccessMsg.textContent = "Impossible de copier automatiquement. Merci de copier manuellement le texte ci-dessous.";
+                            copySuccessMsg.style.color = 'var(--accent)';
+                        }
+                    }
+                    // window.open(gistUrl, '_blank');
                 };
                 document.getElementById('closeJsonCopyModal').onclick = function() {
                     jsonCopyModal.classList.remove('active');
                 };
-                // Ouvre aussi le Gist dans un nouvel onglet
                 const gistUrl = `https://gist.github.com/Frouk91/${GIST_ID}/edit`;
                 window.open(gistUrl, '_blank');
                 astreinteList = [];

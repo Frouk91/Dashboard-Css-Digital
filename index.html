@@ -1186,7 +1186,7 @@
             flex-direction: column;
             z-index: 999999;
             animation: fadeOutPreloader 0.8s ease forwards;
-            animation-delay: 3s;
+            animation-delay: 4s;
             gap: 1.5rem;
         }
 
@@ -1219,7 +1219,7 @@
             width: 0;
             background: linear-gradient(90deg, var(--secondary), var(--cyan));
             border-radius: 2px;
-            animation: loadBar 2.8s cubic-bezier(0.1, 0.2, 0.5, 1) forwards;
+            animation: loadBar 3.8s cubic-bezier(0.1, 0.2, 0.5, 1) forwards;
         }
 
         @keyframes loadBar {
@@ -1538,11 +1538,11 @@
                         <li><span class="agent-email">Quadient agentexpert01</span><span class="agent-name">Omer</span></li>
                         <li><span class="agent-email">Quadient agentexpert02</span><span class="agent-name">Philippe</span></li>
                         <li><span class="agent-email">Quadient agentexpert03</span><span class="agent-name">Adel</span></li>
-                        <li><span class="agent-email">Quadient agentexpert04</span><span class="agent-name">Julien</span></li>
                         <li><span class="agent-email">Quadient agentexpert05</span><span class="agent-name">Gaël</span></li>
                         <li><span class="agent-email">Quadient agentexpert06</span><span class="agent-name">Toufik</span></li>
                         <li><span class="agent-email">Quadient agentexpert07</span><span class="agent-name">Kevin</span></li>
                         <li><span class="agent-email">Quadient agentexpert08</span><span class="agent-name">Camil</span></li>
+                        <li><span class="agent-email">Quadient agentexpert15</span><span class="agent-name">Katia</span></li>
                     </ul>
                 </div>
 
@@ -1654,7 +1654,7 @@
         if (localStorage.getItem(key) !== today) {
             document.body.classList.add('preloader-active');
             window.addEventListener('DOMContentLoaded', function() {
-                setTimeout(function() { hide(); localStorage.setItem(key, today); }, 3000);
+                setTimeout(function() { hide(); localStorage.setItem(key, today); }, 4000);
             });
         } else {
             hide();
@@ -1931,7 +1931,9 @@
         });
 
         function populateSelects() {
-            const agents = [...document.querySelectorAll('.agents-list .agent-name')].map(el => el.textContent);
+            // Agents exclus de la liste des astreintes (restent dans la liste des Agents Expert)
+            const excludedFromAstreinte = ['Julien', 'Gaël', 'Gael'];
+            const agents = [...document.querySelectorAll('.agents-list .agent-name')].map(el => el.textContent).filter(n => !excludedFromAstreinte.includes(n));
             const opts = '<option value="">Sélectionner un agent</option>' + agents.map(a => `<option value="${a}">${a}</option>`).join('');
             document.getElementById('agent1Select').innerHTML = opts;
             document.getElementById('agent2Select').innerHTML = opts;
